@@ -307,13 +307,16 @@
             <div class="contact_section_2">
                <div class="row">
                   <div class="col-md-12">
-                     <div class="mail_section_1">
-                        <input type="text" class="mail_text" placeholder="Your Name" name="Your Name">
-                        <input type="text" class="mail_text" placeholder="Your Email" name="Your Email">
-                        <input type="text" class="mail_text" placeholder="Your Phone" name="Your Phone">
-                        <textarea class="massage-bt" placeholder="Your Massage" rows="5" id="comment" name="Your Massage"></textarea>
-                        <div class="send_bt"><a href="#">Send Now</a></div>
-                     </div>
+                     <form class="mail_section_1 js-contact-form" novalidate>
+                        <input type="text" class="mail_text" placeholder="Your Name *" name="name" autocomplete="name" required maxlength="100" aria-label="Your name">
+                        <input type="email" class="mail_text" placeholder="Your Email *" name="email" autocomplete="email" required maxlength="150" aria-label="Your e-mail">
+                        <input type="text" class="mail_text" placeholder="Institution / Company (optional)" name="affiliation" autocomplete="organization" maxlength="150" aria-label="Institution or company">
+                        <textarea class="massage-bt" placeholder="Your Message *" rows="5" id="comment" name="message" required minlength="10" maxlength="5000" aria-label="Your message"></textarea>
+                        <input type="hidden" name="subject" value="Message from the home page">
+                        <input type="checkbox" name="botcheck" class="cf-hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+                        <div class="send_bt"><button type="submit">Send Now</button></div>
+                        <div class="form-status" role="status" aria-live="polite" hidden></div>
+                     </form>
                   </div>
                </div>
             </div>
@@ -365,6 +368,7 @@
       <!-- sidebar -->
       <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
       <script src="js/custom.js"></script>
+      <script src="js/contact.js"></script>
       <script>
          $('#myCarousel').carousel({
             interval: false

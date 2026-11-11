@@ -6,10 +6,9 @@
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <!-- site metas -->
-      <title>Contact</title>
-      <meta name="keywords" content="">
-      <meta name="description" content="">
-      <meta name="author" content="">
+      <title>Contact | Frank Sánchez</title>
+      <meta name="description" content="Contact Frank R. Sánchez-Monteza about research collaborations, publications, and nanomaterials.">
+      <meta name="author" content="Frank R. Sánchez-Monteza">
       <!-- bootstrap css -->
       <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
       <!-- style css -->
@@ -68,20 +67,75 @@
             <div class="row">
                <div class="col-sm-12">
                   <h1 class="contact_taital">My <span class="contact_taital_1">Contact</span></h1>
+                  <p class="frsm-lead">Do you have a question about my research or publications, or would you like to collaborate?
+                     Send me a message and I will reply by e-mail.</p>
                </div>
             </div>
-            <div class="contact_section_2">
-               <div class="row">
-                  <div class="col-md-12">
-                     <div class="mail_section_1">
-                        <input type="text" class="mail_text" placeholder="Your Name" name="Your Name">
-                        <input type="text" class="mail_text" placeholder="Your Email" name="Your Email">
-                        <input type="text" class="mail_text" placeholder="Your Phone" name="Your Phone">
-                        <textarea class="massage-bt" placeholder="Your Massage" rows="5" id="comment" name="Your Massage"></textarea>
-                        <div class="send_bt"><a href="#">Send Now</a></div>
+
+            <div class="contact-wrap">
+               <!-- info panel -->
+               <aside class="contact-info">
+                  <h2>Let's talk</h2>
+                  <p>I am happy to discuss nanomaterials, thin films, manganese oxides, and materials characterization.</p>
+
+                  <div class="contact-item" data-contact-email-wrap>
+                     <div class="frsm-icon"><i class="fa fa-envelope" aria-hidden="true"></i></div>
+                     <div>
+                        <small>E-mail</small>
+                        <a data-contact-email href="#">your.email@example.com</a>
+                        <button type="button" class="copy-email" data-copy-email><i class="fa fa-files-o" aria-hidden="true"></i> Copy</button>
                      </div>
                   </div>
-               </div>
+
+                  <h3>You can write to me about</h3>
+                  <ul>
+                     <li>Research collaborations</li>
+                     <li>Questions about my publications</li>
+                     <li>Synthesis and characterization of nanomaterials</li>
+                     <li>Academic opportunities</li>
+                  </ul>
+               </aside>
+
+               <!-- form -->
+               <form class="contact-form js-contact-form" novalidate>
+                  <div class="cf-row">
+                     <label class="cf-field">
+                        <span>Name <em>*</em></span>
+                        <input type="text" name="name" autocomplete="name" required maxlength="100" placeholder="Your full name">
+                     </label>
+                     <label class="cf-field">
+                        <span>E-mail <em>*</em></span>
+                        <input type="email" name="email" autocomplete="email" required maxlength="150" placeholder="you@example.com">
+                     </label>
+                  </div>
+                  <div class="cf-row">
+                     <label class="cf-field">
+                        <span>Institution / Company</span>
+                        <input type="text" name="affiliation" autocomplete="organization" maxlength="150" placeholder="Optional">
+                     </label>
+                     <label class="cf-field">
+                        <span>Subject</span>
+                        <select name="subject">
+                           <option>Research collaboration</option>
+                           <option>Question about a publication</option>
+                           <option>Academic opportunity</option>
+                           <option>Other</option>
+                        </select>
+                     </label>
+                  </div>
+                  <label class="cf-field">
+                     <span>Message <em>*</em></span>
+                     <textarea name="message" rows="6" required minlength="10" maxlength="5000" placeholder="Write your message here..."></textarea>
+                  </label>
+                  <!-- honeypot anti-spam: hidden from people -->
+                  <input type="checkbox" name="botcheck" class="cf-hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+                  <div class="cf-actions">
+                     <button type="submit" class="pub-btn"><i class="fa fa-envelope" aria-hidden="true"></i> Send message</button>
+                     <small class="cf-privacy">Your data is only used to reply to your message.</small>
+                  </div>
+                  <div class="form-status" role="status" aria-live="polite" hidden></div>
+               </form>
             </div>
          </div>
       </div>
@@ -121,30 +175,6 @@
       <!-- sidebar -->
       <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
       <script src="js/custom.js"></script>
-      <script>
-         $('#myCarousel').carousel({
-            interval: false
-         });
-         
-         //scroll slides on swipe for touch enabled devices
-         
-         $("#myCarousel").on("touchstart", function(event){
-         
-            var yClick = event.originalEvent.touches[0].pageY;
-            $(this).one("touchmove", function(event){
-         
-                var yMove = event.originalEvent.touches[0].pageY;
-                if( Math.floor(yClick - yMove) > 1 ){
-                    $(".carousel").carousel('next');
-                }
-                else if( Math.floor(yClick - yMove) < -1 ){
-                    $(".carousel").carousel('prev');
-                }
-            });
-            $(".carousel").on("touchend", function(){
-                $(this).off("touchmove");
-            });
-         });
-      </script>
+      <script src="js/contact.js"></script>
    </body>
 </html>
