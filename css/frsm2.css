@@ -1,0 +1,536 @@
+/* =====================================================================
+   FRSM 2.0.0 — styles for the Research and Publications sections
+   Uses the template palette: yellow #f5c729, dark #252f2d
+   ===================================================================== */
+
+:root {
+    --frsm-yellow: #f5c729;
+    --frsm-dark: #252f2d;
+    --frsm-ink: #292929;
+    --frsm-text: #555b59;
+    --frsm-muted: #8a908e;
+    --frsm-line: #e6e8e7;
+    --frsm-soft: #f7f7f5;
+}
+
+/* ---------- generic section ---------- */
+.frsm-section {
+    width: 100%;
+    float: left;
+    padding: 80px 0 20px;
+}
+
+.frsm-section.frsm-alt {
+    background: var(--frsm-soft);
+    padding-bottom: 70px;
+    margin-top: 60px;
+}
+
+.frsm-title {
+    font-size: 40px;
+    color: var(--frsm-yellow);
+    font-weight: bold;
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+.frsm-title span {
+    color: var(--frsm-ink);
+    border-bottom: 5px solid #363636;
+}
+
+.frsm-lead {
+    max-width: 820px;
+    margin: 20px auto 40px;
+    text-align: center;
+    font-size: 17px;
+    color: var(--frsm-text);
+    line-height: 1.75;
+}
+
+/* ---------- cards ---------- */
+.frsm-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 26px;
+}
+
+.frsm-grid.two {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+@media (max-width: 767px) {
+    .frsm-grid.two { grid-template-columns: 1fr; }
+}
+
+.frsm-card {
+    background: #fff;
+    border: 1px solid var(--frsm-line);
+    border-radius: 10px;
+    padding: 28px 26px 24px;
+    box-shadow: 0 6px 18px rgba(37, 47, 45, 0.06);
+    transition: transform .25s ease, box-shadow .25s ease;
+    scroll-margin-top: 110px;
+}
+
+.frsm-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 26px rgba(37, 47, 45, 0.12);
+}
+
+.frsm-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: var(--frsm-dark);
+    color: var(--frsm-yellow);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    margin-bottom: 18px;
+}
+
+.frsm-card h3 {
+    font-size: 21px;
+    font-weight: bold;
+    color: var(--frsm-ink);
+    padding-bottom: 4px;
+}
+
+.frsm-card .frsm-sub {
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    color: var(--frsm-muted);
+    margin-bottom: 12px;
+}
+
+.frsm-card p {
+    font-size: 15px;
+    color: var(--frsm-text);
+    line-height: 1.7;
+    margin-bottom: 12px;
+}
+
+.frsm-card ul {
+    padding-left: 0;
+    margin: 0 0 6px;
+    list-style: none;
+}
+
+.frsm-card ul li {
+    position: relative;
+    padding-left: 18px;
+    font-size: 14.5px;
+    color: var(--frsm-text);
+    line-height: 1.65;
+    margin-bottom: 4px;
+}
+
+.frsm-card ul li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 9px;
+    width: 8px;
+    height: 8px;
+    border-radius: 2px;
+    background: var(--frsm-yellow);
+}
+
+.frsm-note {
+    margin-top: 14px;
+    padding: 12px 14px;
+    border-left: 4px solid var(--frsm-yellow);
+    background: var(--frsm-soft);
+    font-size: 14px;
+    color: var(--frsm-ink);
+    line-height: 1.6;
+    border-radius: 0 6px 6px 0;
+}
+
+.frsm-note strong {
+    color: var(--frsm-dark);
+}
+
+/* ---------- technique cards (characterization) ---------- */
+.frsm-tech .frsm-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.frsm-tech dl {
+    margin: 0;
+    font-size: 14.5px;
+}
+
+.frsm-tech dt {
+    font-weight: bold;
+    color: var(--frsm-ink);
+    margin-top: 10px;
+}
+
+.frsm-tech dd {
+    margin: 2px 0 0;
+    color: var(--frsm-text);
+    line-height: 1.6;
+}
+
+.frsm-badge {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: bold;
+    background: var(--frsm-yellow);
+    color: var(--frsm-dark);
+    padding: 3px 10px;
+    border-radius: 20px;
+    margin-left: 6px;
+    vertical-align: middle;
+}
+
+/* ---------- process flow ---------- */
+.frsm-flow {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    justify-content: center;
+    align-items: stretch;
+    margin-top: 10px;
+}
+
+.frsm-step {
+    flex: 1 1 150px;
+    max-width: 190px;
+    background: #fff;
+    border: 1px solid var(--frsm-line);
+    border-top: 4px solid var(--frsm-yellow);
+    border-radius: 8px;
+    padding: 16px 14px;
+    text-align: center;
+    position: relative;
+}
+
+.frsm-step .n {
+    display: block;
+    font-size: 12px;
+    font-weight: bold;
+    color: var(--frsm-muted);
+    letter-spacing: .1em;
+}
+
+.frsm-step strong {
+    display: block;
+    font-size: 15px;
+    color: var(--frsm-ink);
+    margin: 4px 0;
+}
+
+.frsm-step small {
+    font-size: 13px;
+    color: var(--frsm-text);
+    line-height: 1.5;
+    display: block;
+}
+
+/* ---------- stats ---------- */
+.frsm-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+    gap: 18px;
+    margin: 10px 0 34px;
+}
+
+.frsm-stat {
+    background: var(--frsm-dark);
+    color: #fff;
+    border-radius: 10px;
+    padding: 20px 18px;
+    text-align: center;
+}
+
+.frsm-stat b {
+    display: block;
+    font-size: 26px;
+    color: var(--frsm-yellow);
+    line-height: 1.2;
+}
+
+.frsm-stat span {
+    font-size: 13.5px;
+    color: #d8dcdb;
+    line-height: 1.4;
+    display: block;
+    margin-top: 6px;
+}
+
+/* ---------- publications ---------- */
+.pub-card {
+    background: #fff;
+    border: 1px solid var(--frsm-line);
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(37, 47, 45, 0.08);
+    overflow: hidden;
+    margin-bottom: 30px;
+}
+
+.pub-head {
+    background: var(--frsm-dark);
+    padding: 26px 30px;
+    display: flex;
+    gap: 22px;
+    align-items: flex-start;
+}
+
+.pub-year {
+    flex: 0 0 auto;
+    background: var(--frsm-yellow);
+    color: var(--frsm-dark);
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 8px;
+    padding: 10px 14px;
+    line-height: 1;
+}
+
+.pub-type {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    color: var(--frsm-yellow);
+    margin-bottom: 6px;
+}
+
+.pub-head h2 {
+    color: #fff;
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 1.35;
+    padding: 0;
+}
+
+.pub-head h2 sub {
+    font-size: 65%;
+}
+
+.pub-body {
+    padding: 26px 30px 30px;
+}
+
+.pub-authors {
+    font-size: 16px;
+    color: var(--frsm-ink);
+    margin-bottom: 4px;
+}
+
+.pub-authors .me {
+    font-weight: bold;
+    border-bottom: 2px solid var(--frsm-yellow);
+}
+
+.pub-affil {
+    font-size: 13.5px;
+    color: var(--frsm-muted);
+    line-height: 1.6;
+    margin-bottom: 12px;
+}
+
+.pub-journal {
+    font-size: 15px;
+    color: var(--frsm-text);
+    margin-bottom: 20px;
+}
+
+.pub-journal em {
+    color: var(--frsm-ink);
+    font-weight: bold;
+}
+
+.pub-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 24px;
+}
+
+.pub-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border-radius: 6px;
+    padding: 10px 18px;
+    font-size: 14.5px;
+    font-weight: bold;
+    border: 2px solid var(--frsm-dark);
+    background: var(--frsm-dark);
+    color: #fff !important;
+    cursor: pointer;
+    font-family: inherit;
+    line-height: 1.2;
+}
+
+.pub-btn:hover {
+    background: var(--frsm-yellow);
+    border-color: var(--frsm-yellow);
+    color: var(--frsm-dark) !important;
+}
+
+.pub-btn.ghost {
+    background: transparent;
+    color: var(--frsm-dark) !important;
+}
+
+.pub-btn.ghost:hover {
+    background: var(--frsm-yellow);
+}
+
+.pub-body h4 {
+    font-size: 17px;
+    font-weight: bold;
+    color: var(--frsm-ink);
+    margin-top: 22px;
+    padding-bottom: 8px;
+}
+
+.pub-body p {
+    font-size: 15px;
+    line-height: 1.75;
+    color: var(--frsm-text);
+}
+
+.pub-results {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 14px;
+    margin-top: 6px;
+}
+
+.pub-result {
+    background: var(--frsm-soft);
+    border-radius: 8px;
+    padding: 14px 16px;
+    font-size: 14px;
+    line-height: 1.55;
+    color: var(--frsm-text);
+}
+
+.pub-result b {
+    display: block;
+    color: var(--frsm-ink);
+    font-size: 15px;
+    margin-bottom: 3px;
+}
+
+.chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 6px;
+}
+
+.chip {
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 20px;
+    border: 1px solid var(--frsm-line);
+    background: #fff;
+    color: var(--frsm-ink);
+}
+
+.pub-cite {
+    margin-top: 8px;
+    background: var(--frsm-soft);
+    border-left: 4px solid var(--frsm-yellow);
+    padding: 14px 16px;
+    font-size: 14px;
+    line-height: 1.65;
+    color: var(--frsm-ink);
+    border-radius: 0 6px 6px 0;
+    word-break: break-word;
+}
+
+.pub-copied {
+    font-size: 13px;
+    color: #2e7d32;
+    margin-left: 6px;
+    opacity: 0;
+    transition: opacity .3s;
+}
+
+.pub-copied.show {
+    opacity: 1;
+}
+
+.pub-more {
+    text-align: center;
+    color: var(--frsm-text);
+    font-size: 15px;
+    padding: 10px 0 30px;
+}
+
+.pub-more a {
+    color: var(--frsm-dark);
+    font-weight: bold;
+    border-bottom: 2px solid var(--frsm-yellow);
+}
+
+/* ---------- home: latest publication teaser ---------- */
+.frsm-teaser {
+    display: flex;
+    gap: 26px;
+    align-items: center;
+    background: var(--frsm-dark);
+    border-radius: 12px;
+    padding: 30px 34px;
+    color: #fff;
+}
+
+.frsm-teaser .tag {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    color: var(--frsm-yellow);
+}
+
+.frsm-teaser h3 {
+    color: #fff;
+    font-size: 22px;
+    font-weight: bold;
+    line-height: 1.35;
+    padding: 6px 0;
+}
+
+.frsm-teaser p {
+    color: #d8dcdb;
+    font-size: 14.5px;
+    margin: 0;
+}
+
+.frsm-teaser .pub-btn {
+    background: var(--frsm-yellow);
+    border-color: var(--frsm-yellow);
+    color: var(--frsm-dark) !important;
+    flex: 0 0 auto;
+}
+
+.frsm-teaser .pub-btn:hover {
+    background: #fff;
+    border-color: #fff;
+}
+
+/* ---------- CTA button row ---------- */
+.frsm-cta {
+    text-align: center;
+    margin-top: 40px;
+}
+
+/* ---------- small screens ---------- */
+@media (max-width: 767px) {
+    .frsm-title { font-size: 30px; }
+    .frsm-section { padding-top: 60px; }
+    .pub-head { flex-direction: column; padding: 22px 20px; gap: 12px; }
+    .pub-head h2 { font-size: 20px; }
+    .pub-body { padding: 20px; }
+    .frsm-teaser { flex-direction: column; align-items: flex-start; padding: 24px 22px; }
+    .frsm-step { max-width: none; }
+}

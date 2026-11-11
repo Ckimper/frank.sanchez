@@ -5,9 +5,6 @@
       <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1">
-      <!-- mobile metas -->
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <meta name="viewport" content="initial-scale=1, maximum-scale=1">
       <!-- site metas -->
       <title>Portfolio</title>
       <meta name="keywords" content="">
@@ -27,8 +24,8 @@
       <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
       <!-- fonts -->
       <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
-      <!-- font awesome css -->
-      <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+      <!-- FRSM 2.0 styles -->
+      <link rel="stylesheet" href="css/frsm2.css">
    </head>
    <body>
       <!-- header section start -->
@@ -46,6 +43,9 @@
                      </li>
                      <li class="nav-item">
                         <a class="nav-link" href="portfolio.html">Research</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="publications.html">Publications</a>
                      </li>
                      <li class="nav-item">
                         <a class="nav-link" href="service.html">About me</a>
@@ -79,7 +79,7 @@
                            <div class="overlay">
                               <div class="text">
                                  <div class="btn_main">
-                                    <div class="buy_bt"><a href="#">Nanomaterials</a></div>
+                                    <div class="buy_bt"><a href="#nanomaterials">Nanomaterials</a></div>
                                  </div>
                               </div>
                            </div>
@@ -91,7 +91,7 @@
                            <div class="overlay">
                               <div class="text">
                                  <div class="btn_main">
-                                    <div class="buy_bt"><a href="#">XRD</a></div>
+                                    <div class="buy_bt"><a href="#xrd">XRD</a></div>
                                  </div>
                               </div>
                            </div>
@@ -107,7 +107,7 @@
                            <div class="overlay">
                               <div class="text">
                                  <div class="btn_main">
-                                    <div class="buy_bt"><a href="#">Raman</a></div>
+                                    <div class="buy_bt"><a href="#raman">Raman</a></div>
                                  </div>
                               </div>
                            </div>
@@ -119,7 +119,7 @@
                            <div class="overlay">
                               <div class="text">
                                  <div class="btn_main">
-                                    <div class="buy_bt"><a href="#">Sputtering</a></div>
+                                    <div class="buy_bt"><a href="#sputtering">Sputtering</a></div>
                                  </div>
                               </div>
                            </div>
@@ -131,7 +131,7 @@
                            <div class="overlay">
                               <div class="text">
                                  <div class="btn_main">
-                                    <div class="buy_bt"><a href="#">Random Lasing</a></div>
+                                    <div class="buy_bt"><a href="#research-lines">Random Lasing</a></div>
                                  </div>
                               </div>
                            </div>
@@ -140,10 +140,200 @@
                   </div>
                </div>
             </div>
-            <div class="seemore_bt"><a href="index.html">Home</a></div>
          </div>
       </div>
       <!-- portfolio section end -->
+
+      <!-- research lines start -->
+      <section class="frsm-section" id="research-lines">
+         <div class="container">
+            <h2 class="frsm-title">Research <span>Lines</span></h2>
+            <p class="frsm-lead">My work focuses on the synthesis and physical characterization of nanostructured
+               transition-metal oxides, mainly manganese oxides, as nanoparticles and thin films. I want to understand
+               how synthesis and deposition conditions control their structure, defects, and optical properties.</p>
+            <div class="frsm-grid two">
+               <article class="frsm-card" id="nanomaterials">
+                  <div class="frsm-icon"><i class="fa fa-th" aria-hidden="true"></i></div>
+                  <h3>Nanomaterials</h3>
+                  <div class="frsm-sub">Size-dependent physics</div>
+                  <p>Nanomaterials have at least one dimension between 1 and 100&nbsp;nm. At this scale, two effects change
+                     their properties compared with the bulk material: the high fraction of surface atoms and
+                     quantum confinement.</p>
+                  <ul>
+                     <li>Band gap widening as the crystallite size decreases</li>
+                     <li>Surface defects and oxygen vacancies that control luminescence</li>
+                     <li>High specific surface area for catalysis and energy storage</li>
+                  </ul>
+                  <div class="frsm-note"><strong>Focus:</strong> low-cost, scalable synthesis routes that tune size and
+                     defects without high-temperature treatments.</div>
+               </article>
+
+               <article class="frsm-card" id="mn3o4">
+                  <div class="frsm-icon"><i class="fa fa-certificate" aria-hidden="true"></i></div>
+                  <h3>Manganese Oxide Mn<sub>3</sub>O<sub>4</sub></h3>
+                  <div class="frsm-sub">Hausmannite &middot; spinel</div>
+                  <p>Mn<sub>3</sub>O<sub>4</sub> (hausmannite) has a tetragonally distorted spinel structure (space group
+                     I4<sub>1</sub>/amd). Mn<sup>2+</sup> ions occupy tetrahedral sites and Mn<sup>3+</sup> ions occupy
+                     octahedral sites. The Jahn&ndash;Teller distortion of Mn<sup>3+</sup> is responsible for the
+                     tetragonal cell.</p>
+                  <ul>
+                     <li>Stable, low-cost, and non-toxic</li>
+                     <li>Bulk band gap &asymp; 2.30&nbsp;eV, tunable at the nanoscale</li>
+                     <li>Applications: supercapacitors, Li-ion batteries, catalysis, sensors, and biomedicine</li>
+                  </ul>
+                  <div class="frsm-note"><strong>My result:</strong> Mn<sub>3</sub>O<sub>4</sub> nanoparticles synthesized in one step
+                     at room temperature in 30&nbsp;min, with a band gap of 2.37&ndash;2.89&nbsp;eV.
+                     <a href="publications.html">See publication &rarr;</a></div>
+               </article>
+
+               <article class="frsm-card" id="sputtering">
+                  <div class="frsm-icon"><i class="fa fa-magnet" aria-hidden="true"></i></div>
+                  <h3>Magnetron Sputtering</h3>
+                  <div class="frsm-sub">Thin-film deposition &middot; PVD</div>
+                  <p>Physical vapor deposition in which Ar<sup>+</sup> ions from a plasma bombard a target and eject atoms
+                     that condense on a substrate. A magnetic field behind the target traps electrons near its
+                     surface, which increases ionization and the deposition rate.</p>
+                  <ul>
+                     <li>DC mode for metallic targets; RF mode for insulating oxide targets</li>
+                     <li>Reactive sputtering (Ar + O<sub>2</sub>) to grow oxides such as MnO<sub>x</sub></li>
+                     <li>Control parameters: power, working pressure, Ar/O<sub>2</sub> ratio, substrate temperature, and time</li>
+                     <li>Dense, uniform, adherent films with controlled thickness</li>
+                  </ul>
+               </article>
+
+               <article class="frsm-card" id="spin-coating">
+                  <div class="frsm-icon"><i class="fa fa-refresh" aria-hidden="true"></i></div>
+                  <h3>Spin Coating</h3>
+                  <div class="frsm-sub">Solution-based films</div>
+                  <p>A precursor solution or nanoparticle dispersion is deposited on a substrate, which is then spun at high
+                     speed. Centrifugal force spreads the liquid, and solvent evaporation leaves a uniform film.</p>
+                  <ul>
+                     <li>Typical speeds: 1000&ndash;6000&nbsp;rpm for 30&ndash;60&nbsp;s</li>
+                     <li>Thickness scales roughly as &omega;<sup>&minus;1/2</sup>, and also depends on viscosity and concentration</li>
+                     <li>Multilayers by repeated cycles, followed by drying and annealing</li>
+                     <li>Simple, fast, and low-cost; ideal for depositing synthesized nanoparticles</li>
+                  </ul>
+               </article>
+            </div>
+         </div>
+      </section>
+      <!-- research lines end -->
+
+      <!-- synthesis route start -->
+      <section class="frsm-section frsm-alt" id="synthesis">
+         <div class="container">
+            <h2 class="frsm-title">Synthesis <span>Route</span></h2>
+            <p class="frsm-lead">One-step coprecipitation of Mn<sub>3</sub>O<sub>4</sub> nanoparticles at room temperature,
+               with no post-synthesis thermal treatment. Water or ethanol is used as the solvent to tune particle size and band gap.</p>
+            <div class="frsm-flow">
+               <div class="frsm-step"><span class="n">STEP 1</span><strong>Precursors</strong><small>MnCl<sub>2</sub>&middot;4H<sub>2</sub>O 0.1&nbsp;M + NaOH 0.1&ndash;0.3&nbsp;M</small></div>
+               <div class="frsm-step"><span class="n">STEP 2</span><strong>Mixing</strong><small>Stirring at 20&nbsp;&deg;C in water or ethanol</small></div>
+               <div class="frsm-step"><span class="n">STEP 3</span><strong>Aging</strong><small>30&nbsp;min at 20&nbsp;&deg;C, forming a colloid</small></div>
+               <div class="frsm-step"><span class="n">STEP 4</span><strong>Washing</strong><small>3 washes with double-distilled water</small></div>
+               <div class="frsm-step"><span class="n">STEP 5</span><strong>Drying</strong><small>70&nbsp;&deg;C for 12&nbsp;h, then agate mortar</small></div>
+               <div class="frsm-step"><span class="n">RESULT</span><strong>Mn<sub>3</sub>O<sub>4</sub> NPs</strong><small>Spherical, 30&ndash;54&nbsp;nm</small></div>
+            </div>
+         </div>
+      </section>
+      <!-- synthesis route end -->
+
+      <!-- characterization start -->
+      <section class="frsm-section frsm-tech" id="characterization">
+         <div class="container">
+            <h2 class="frsm-title">Characterization <span>Techniques</span></h2>
+            <p class="frsm-lead">Structural, vibrational, optical, and morphological techniques that I use to connect
+               synthesis conditions with the physical properties of nanomaterials.</p>
+            <div class="frsm-grid">
+               <article class="frsm-card" id="xrd">
+                  <div class="frsm-icon"><i class="fa fa-crosshairs" aria-hidden="true"></i></div>
+                  <h3>XRD <span class="frsm-badge">Structure</span></h3>
+                  <div class="frsm-sub">X-ray diffraction</div>
+                  <dl>
+                     <dt>What it measures</dt>
+                     <dd>Diffraction of X-rays by crystal planes (Bragg's law, n&lambda; = 2d&nbsp;sin&theta;).</dd>
+                     <dt>What I obtain</dt>
+                     <dd>Phase identification, lattice parameters, crystallite size (Scherrer equation), microstrain, and dislocation density.</dd>
+                     <dt>In Mn<sub>3</sub>O<sub>4</sub></dt>
+                     <dd>Single tetragonal phase. Crystallite size is 21&ndash;25&nbsp;nm in water and 9&ndash;11&nbsp;nm in ethanol.</dd>
+                  </dl>
+               </article>
+
+               <article class="frsm-card" id="raman">
+                  <div class="frsm-icon"><i class="fa fa-signal" aria-hidden="true"></i></div>
+                  <h3>Raman <span class="frsm-badge">Vibrations</span></h3>
+                  <div class="frsm-sub">Raman spectroscopy</div>
+                  <dl>
+                     <dt>What it measures</dt>
+                     <dd>Inelastic scattering of laser light by lattice vibrations (phonons).</dd>
+                     <dt>What I obtain</dt>
+                     <dd>Phase fingerprint and purity, local disorder, and bonding. It distinguishes between manganese oxide phases.</dd>
+                     <dt>In Mn<sub>3</sub>O<sub>4</sub></dt>
+                     <dd>E<sub>g</sub> &asymp; 318, T<sub>2g</sub> &asymp; 372, and A<sub>1g</sub> &asymp; 658&nbsp;cm<sup>&minus;1</sup> (Mn&ndash;O in tetrahedral sites). Excitation at 532&nbsp;nm.</dd>
+                  </dl>
+               </article>
+
+               <article class="frsm-card" id="pl">
+                  <div class="frsm-icon"><i class="fa fa-lightbulb-o" aria-hidden="true"></i></div>
+                  <h3>PL <span class="frsm-badge">Defects</span></h3>
+                  <div class="frsm-sub">Photoluminescence</div>
+                  <dl>
+                     <dt>What it measures</dt>
+                     <dd>Light emitted by the material after optical excitation.</dd>
+                     <dt>What I obtain</dt>
+                     <dd>Radiative transitions, defect states, and oxygen vacancies inside the band gap.</dd>
+                     <dt>In Mn<sub>3</sub>O<sub>4</sub></dt>
+                     <dd>Excitation at 380&nbsp;nm. Bands at 460, 490, 519, 541, and 589&nbsp;nm, linked to oxygen vacancies and Mn<sup>3+</sup> d&ndash;d transitions.</dd>
+                  </dl>
+               </article>
+
+               <article class="frsm-card" id="uvvis">
+                  <div class="frsm-icon"><i class="fa fa-sun-o" aria-hidden="true"></i></div>
+                  <h3>UV-Vis <span class="frsm-badge">Band gap</span></h3>
+                  <div class="frsm-sub">Diffuse reflectance spectroscopy</div>
+                  <dl>
+                     <dt>What it measures</dt>
+                     <dd>Absorption and reflectance of light from the ultraviolet to the near-infrared.</dd>
+                     <dt>What I obtain</dt>
+                     <dd>Optical band gap from the Kubelka&ndash;Munk function and the Tauc plot.</dd>
+                     <dt>In Mn<sub>3</sub>O<sub>4</sub></dt>
+                     <dd>E<sub>g</sub> = 2.37&ndash;2.89&nbsp;eV, above the bulk value (2.30&nbsp;eV), consistent with quantum confinement.</dd>
+                  </dl>
+               </article>
+
+               <article class="frsm-card" id="sem">
+                  <div class="frsm-icon"><i class="fa fa-search-plus" aria-hidden="true"></i></div>
+                  <h3>SEM <span class="frsm-badge">Morphology</span></h3>
+                  <div class="frsm-sub">Scanning electron microscopy</div>
+                  <dl>
+                     <dt>What it measures</dt>
+                     <dd>Secondary and backscattered electrons produced by a focused electron beam scanned over the surface.</dd>
+                     <dt>What I obtain</dt>
+                     <dd>Morphology, particle size distribution, agglomeration, and film surface and thickness.</dd>
+                     <dt>In Mn<sub>3</sub>O<sub>4</sub></dt>
+                     <dd>Spherical particles: 46&ndash;54&nbsp;nm in water and 30&ndash;33&nbsp;nm in ethanol.</dd>
+                  </dl>
+               </article>
+
+               <article class="frsm-card" id="ftir">
+                  <div class="frsm-icon"><i class="fa fa-bar-chart-o" aria-hidden="true"></i></div>
+                  <h3>FTIR <span class="frsm-badge">Bonds</span></h3>
+                  <div class="frsm-sub">Infrared spectroscopy</div>
+                  <dl>
+                     <dt>What it measures</dt>
+                     <dd>Absorption of infrared radiation by molecular and lattice vibrations.</dd>
+                     <dt>What I obtain</dt>
+                     <dd>Metal&ndash;oxygen bonds, surface groups, and residues from the synthesis.</dd>
+                     <dt>In Mn<sub>3</sub>O<sub>4</sub></dt>
+                     <dd>Mn&ndash;O bands at &asymp; 403, 476, and 593&nbsp;cm<sup>&minus;1</sup>, confirming the spinel structure.</dd>
+                  </dl>
+               </article>
+            </div>
+            <div class="frsm-cta">
+               <a class="pub-btn" href="publications.html"><i class="fa fa-file-text-o" aria-hidden="true"></i> See my publications</a>
+            </div>
+         </div>
+      </section>
+      <!-- characterization end -->
       <!-- footer section start -->
       <div class="footer_section">
          <div class="container">
@@ -156,7 +346,7 @@
                      <a href="#"><i class="fa fa-phone" aria-hidden="true"></i></a>
                   </li>
                   <li>
-                     <a href="#"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+                     <a href="contact.html"><i class="fa fa-envelope" aria-hidden="true"></i></a>
                   </li>
                </ul>
             </div>
@@ -166,7 +356,7 @@
       <!-- copyright section start -->
       <div class="copyright_section">
          <div class="container">
-            <p class="copyright_text">2020 All Rights Reserved. Design by <a href="https://html.design">Free Html Templates</a> Distribution by <a href="https://themewagon.com">ThemeWagon</a></p>
+            <p class="copyright_text">&copy; 2026 Frank R. Sánchez-Monteza. Design by <a href="https://html.design">Free Html Templates</a> Distribution by <a href="https://themewagon.com">ThemeWagon</a></p>
          </div>
       </div>
       <!-- copyright section end -->
