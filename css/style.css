@@ -10,6 +10,11 @@
     src: url("../fonts/BalooChettan-Regular.ttf");
     src: url("../fonts/BalooChettan-Regular.ttf");
 }
+@font-face {
+    font-family: "Bluffolk";
+    src: url("../fonts/Bluffolk.otf") format("opentype");
+    font-display: swap;
+}
 
 
 /*****---------------------------------------- 1) font-family: 'Rajdhani', sans-serif;
