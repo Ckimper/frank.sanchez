@@ -1162,6 +1162,39 @@
     grid-column: 1 / -1;
 }
 
+/* timeline: random lasing milestones */
+.tl-tag,
+.tl-item span.tl-tag {
+    display: inline-block;
+    font-size: 11.5px;
+    font-weight: bold;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+    color: #fff;
+    background: #8e3fbf;
+    padding: 2px 10px;
+    border-radius: 20px;
+    margin-right: 8px;
+    line-height: 1.6;
+    vertical-align: 1px;
+}
+
+.tl-item span b {
+    font-size: inherit;
+    margin: 0;
+    color: var(--frsm-ink);
+}
+
+.tl-item.tl-rl {
+    border-color: #d9c2ea;
+    background: #fbf7fe;
+}
+
+.tl-item.tl-rl::before {
+    background: #8e3fbf;
+    border-color: #e3cff2;
+}
+
 .frsm-grid.four {
     grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 20px;
