@@ -1155,6 +1155,110 @@
     .mail_section_1 { width: 100% !important; }
 }
 
+/* =====================================================================
+   2.0.1 additions: about, wide card, footer links, back-to-top
+   ===================================================================== */
+.frsm-wide {
+    grid-column: 1 / -1;
+}
+
+.frsm-grid.four {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px;
+}
+
+@media (max-width: 991px) {
+    .frsm-grid.four { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 575px) {
+    .frsm-grid.four { grid-template-columns: 1fr; }
+}
+
+.about-intro {
+    max-width: 860px;
+    margin: 26px auto 10px;
+}
+
+.about-intro p {
+    font-size: 16.5px;
+    line-height: 1.8;
+    color: var(--frsm-text);
+    margin: 0 0 14px;
+}
+
+.about-sub {
+    font-size: 22px;
+    font-weight: bold;
+    color: var(--frsm-ink);
+    margin: 40px 0 18px;
+    padding-left: 14px;
+    border-left: 5px solid var(--frsm-yellow);
+}
+
+.about-chips .chip {
+    font-size: 14px;
+    padding: 6px 14px;
+}
+
+.profile-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding-bottom: 30px;
+}
+
+.orcid-id {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #a6ce39;
+    color: #fff;
+    font-size: 10px;
+    font-weight: bold;
+    line-height: 1;
+}
+
+.location_text .orcid-id {
+    width: 26px;
+    height: 26px;
+    font-size: 13px;
+}
+
+.back-to-top {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    border: 0;
+    background: var(--frsm-yellow);
+    color: var(--frsm-dark);
+    font-size: 22px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, .25);
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: opacity .25s, transform .25s, visibility .25s;
+    z-index: 999;
+}
+
+.back-to-top.show {
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+}
+
+.back-to-top:hover {
+    background: var(--frsm-dark);
+    color: var(--frsm-yellow);
+}
+
 /* ---------- small screens ---------- */
 @media (max-width: 767px) {
     .frsm-title { font-size: 30px; }
@@ -1165,3 +1269,7 @@
     .frsm-teaser { flex-direction: column; align-items: flex-start; padding: 24px 22px; }
     .frsm-step { max-width: none; }
 }
+
+/* current page in menu */
+.navbar-nav .nav-link.active { color: #f5c729 !important; }
+

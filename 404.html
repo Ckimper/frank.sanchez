@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <title>Page not found | Frank Sánchez</title>
+   <meta name="robots" content="noindex">
+   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+   <style>
+      :root { --y: #f5c729; --d: #252f2d; }
+      * { box-sizing: border-box; }
+      body {
+         margin: 0; min-height: 100vh; display: flex; align-items: center; justify-content: center;
+         background: var(--d); color: #d8dcdb; font-family: 'Poppins', Arial, sans-serif; text-align: center; padding: 24px;
+      }
+      .logo { font-size: 44px; font-weight: 700; letter-spacing: 1px; color: #fff; text-decoration: none; }
+      .logo span { color: var(--y); }
+      .code { font-size: clamp(90px, 22vw, 170px); font-weight: 700; line-height: 1; color: var(--y); margin: 26px 0 6px; }
+      .code small { display: block; font-size: 16px; font-weight: 500; color: #aab1af; letter-spacing: .2em; margin-top: 10px; }
+      h1 { color: #fff; font-size: 26px; margin: 22px 0 8px; }
+      p { max-width: 520px; margin: 0 auto 28px; line-height: 1.7; }
+      .links { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+      .links a {
+         padding: 11px 20px; border-radius: 6px; font-weight: 700; text-decoration: none; font-size: 15px;
+         border: 2px solid var(--y); color: var(--y);
+      }
+      .links a.main { background: var(--y); color: var(--d); }
+      .links a:hover { background: #fff; border-color: #fff; color: var(--d); }
+   </style>
+</head>
+<body>
+   <main>
+      <a class="logo" data-home href="index.html">FR<span>SM</span></a>
+      <div class="code">404<small>NANO-SIZED ERROR</small></div>
+      <h1>This page could not be found</h1>
+      <p>Like a nanoparticle, it may be too small to see&hellip; or it simply does not exist.
+         Check the address or go back to the home page.</p>
+      <nav class="links">
+         <a class="main" data-home href="index.html">Home</a>
+         <a data-page="portfolio.html" href="portfolio.html">Research</a>
+         <a data-page="publications.html" href="publications.html">Publications</a>
+         <a data-page="blog.html" href="blog.html">Blog</a>
+         <a data-page="contact.html" href="contact.html">Contact</a>
+      </nav>
+   </main>
+   <script>
+      // On GitHub Pages this page can be shown at any address (e.g. /frank.sanchez/a/b/c),
+      // so links are rebuilt from the site's base folder.
+      (function () {
+         var base = '/';
+         if (/\.github\.io$/.test(location.hostname)) {
+            var first = location.pathname.split('/')[1];
+            if (first && first.indexOf('.') === -1) base = '/' + first + '/';
+         }
+         document.querySelectorAll('[data-home]').forEach(function (a) { a.href = base; });
+         document.querySelectorAll('[data-page]').forEach(function (a) { a.href = base + a.getAttribute('data-page'); });
+      })();
+   </script>
+</body>
+</html>
