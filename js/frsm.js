@@ -62,6 +62,46 @@ var GOATCOUNTER_CODE = 'franksm';
       }
    });
 
+   /* Lab pages: keep the site menu + lab tools menu visible while scrolling.
+      Both bars go into one wrapper; once the full header has scrolled out of
+      view the wrapper becomes a compact fixed bar (a spacer keeps the page
+      from jumping). */
+   var sub = document.querySelector('.lab-subnav'), hdr = document.querySelector('.header_section');
+   if (sub && hdr) {
+      var bar = document.createElement('div'), spacer = document.createElement('div');
+      bar.className = 'lab-top'; spacer.className = 'lab-top-spacer';
+      hdr.parentNode.insertBefore(spacer, hdr);
+      hdr.parentNode.insertBefore(bar, hdr);
+      bar.appendChild(hdr); bar.appendChild(sub);
+      document.documentElement.classList.add('has-lab-top');
+      var full = 0;
+      var stick = function () {
+         var on = document.body.classList.contains('lab-stuck');
+         if (!on) full = bar.offsetHeight;
+         var want = window.pageYOffset > full;
+         if (want !== on) {
+            document.body.classList.toggle('lab-stuck', want);
+            spacer.style.height = want ? full + 'px' : '0';
+            if (!want) { var open = hdr.querySelector('.navbar-collapse.show'); if (open) open.classList.remove('show'); }
+         }
+      };
+      window.addEventListener('scroll', stick, { passive: true });
+      window.addEventListener('resize', function () {
+         if (document.body.classList.contains('lab-stuck')) {
+            document.body.classList.remove('lab-stuck'); full = bar.offsetHeight;
+            document.body.classList.add('lab-stuck'); spacer.style.height = full + 'px';
+         }
+         stick();
+      });
+      /* in the compact bar, picking a menu link closes the phone menu */
+      hdr.addEventListener('click', function (e) {
+         if (e.target.closest('.nav-link') && document.body.classList.contains('lab-stuck')) {
+            var open = hdr.querySelector('.navbar-collapse.show'); if (open) open.classList.remove('show');
+         }
+      });
+      stick();
+   }
+
    /* Lab tools menu: bring the current tool into view on small screens */
    var cur = document.querySelector('.lab-subnav a.active');
    if (cur && cur.parentNode.scrollWidth > cur.parentNode.clientWidth) {
