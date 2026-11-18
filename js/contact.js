@@ -12,6 +12,9 @@ var CONTACT_EMAIL = 'your.email@example.com';
 (function () {
    'use strict';
 
+   /* bilingual messages (uses js/i18n.js when present) */
+   function T(en, es) { return (window.frsmI18n && window.frsmI18n.lang === 'es') ? es : en; }
+
    var keyReady = WEB3FORMS_KEY && WEB3FORMS_KEY.indexOf('YOUR_') !== 0;
    var emailReady = CONTACT_EMAIL && CONTACT_EMAIL.indexOf('example.com') === -1;
 
@@ -27,7 +30,7 @@ var CONTACT_EMAIL = 'your.email@example.com';
       btn.addEventListener('click', function () {
          var done = function () {
             var old = btn.innerHTML;
-            btn.innerHTML = '<i class="fa fa-check" aria-hidden="true"></i> Copied';
+            btn.innerHTML = '<i class="fa fa-check" aria-hidden="true"></i> ' + T('Copied', 'Copiado');
             setTimeout(function () { btn.innerHTML = old; }, 1600);
          };
          if (navigator.clipboard && window.isSecureContext) {
@@ -57,7 +60,7 @@ var CONTACT_EMAIL = 'your.email@example.com';
       var body = (form.elements.message && form.elements.message.value) || '';
       var href = 'mailto:' + CONTACT_EMAIL + '?subject=' + encodeURIComponent(subject) +
                  '&body=' + encodeURIComponent(body + (name ? '\n\n— ' + name : ''));
-      return ' You can also <a href="' + href + '">send it by e-mail</a>.';
+      return T(' You can also <a href="' + href + '">send it by e-mail</a>.', ' También puedes <a href="' + href + '">enviarlo por correo</a>.');
    }
 
    document.querySelectorAll('form.js-contact-form').forEach(function (form) {
@@ -71,18 +74,18 @@ var CONTACT_EMAIL = 'your.email@example.com';
             form.classList.add('was-validated');
             var firstBad = form.querySelector(':invalid');
             if (firstBad) firstBad.focus();
-            setStatus(form, 'error', '<i class="fa fa-exclamation-circle" aria-hidden="true"></i> Please fill in the required fields with a valid e-mail.');
+            setStatus(form, 'error', '<i class="fa fa-exclamation-circle" aria-hidden="true"></i> ' + T('Please fill in the required fields with a valid e-mail.', 'Completa los campos obligatorios con un correo válido.'));
             return;
          }
 
          if (!keyReady) {
-            setStatus(form, 'error', '<i class="fa fa-exclamation-circle" aria-hidden="true"></i> The contact form is not configured yet.' + mailtoFallback(form));
+            setStatus(form, 'error', '<i class="fa fa-exclamation-circle" aria-hidden="true"></i> ' + T('The contact form is not configured yet.', 'El formulario de contacto aún no está configurado.') + mailtoFallback(form));
             return;
          }
 
          var btn = form.querySelector('[type="submit"]');
          var btnHtml = btn ? btn.innerHTML : '';
-         if (btn) { btn.disabled = true; btn.innerHTML = '<i class="fa fa-spinner fa-spin" aria-hidden="true"></i> Sending...'; }
+         if (btn) { btn.disabled = true; btn.innerHTML = '<i class="fa fa-spinner fa-spin" aria-hidden="true"></i> ' + T('Sending...', 'Enviando...'); }
 
          var data = {
             access_key: WEB3FORMS_KEY,
@@ -106,13 +109,13 @@ var CONTACT_EMAIL = 'your.email@example.com';
                if (res && res.success) {
                   form.reset();
                   form.classList.remove('was-validated');
-                  setStatus(form, 'success', '<i class="fa fa-check-circle" aria-hidden="true"></i> Thank you! Your message was sent. I will get back to you soon.');
+                  setStatus(form, 'success', '<i class="fa fa-check-circle" aria-hidden="true"></i> ' + T('Thank you! Your message was sent. I will get back to you soon.', '¡Gracias! Tu mensaje fue enviado. Te responderé pronto.'));
                } else {
-                  setStatus(form, 'error', '<i class="fa fa-exclamation-circle" aria-hidden="true"></i> The message could not be sent.' + mailtoFallback(form));
+                  setStatus(form, 'error', '<i class="fa fa-exclamation-circle" aria-hidden="true"></i> ' + T('The message could not be sent.', 'No se pudo enviar el mensaje.') + mailtoFallback(form));
                }
             })
             .catch(function () {
-               setStatus(form, 'error', '<i class="fa fa-exclamation-circle" aria-hidden="true"></i> Connection error. Please try again.' + mailtoFallback(form));
+               setStatus(form, 'error', '<i class="fa fa-exclamation-circle" aria-hidden="true"></i> ' + T('Connection error. Please try again.', 'Error de conexión. Inténtalo de nuevo.') + mailtoFallback(form));
             })
             .then(function () {
                if (btn) { btn.disabled = false; btn.innerHTML = btnHtml; }

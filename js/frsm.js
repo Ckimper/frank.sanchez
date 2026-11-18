@@ -26,7 +26,9 @@ var GOATCOUNTER_CODE = 'franksm';
    var btn = document.createElement('button');
    btn.type = 'button';
    btn.className = 'back-to-top';
-   btn.setAttribute('aria-label', 'Back to top');
+   btn.setAttribute('data-i18n-src-aria-label', 'Back to top');
+   btn.setAttribute('data-es-aria-label', 'Volver arriba');
+   btn.setAttribute('aria-label', (window.frsmI18n && window.frsmI18n.lang === 'es') ? 'Volver arriba' : 'Back to top');
    btn.innerHTML = '<i class="fa fa-angle-up" aria-hidden="true"></i>';
    document.body.appendChild(btn);
 

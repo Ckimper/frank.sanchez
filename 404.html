@@ -54,6 +54,20 @@
          }
          document.querySelectorAll('[data-home]').forEach(function (a) { a.href = base; });
          document.querySelectorAll('[data-page]').forEach(function (a) { a.href = base + a.getAttribute('data-page'); });
+
+         // Spanish version (same language choice as the rest of the site)
+         var l; try { l = localStorage.getItem('frsm-lang'); } catch (e) {}
+         if (l !== 'es' && l !== 'en') l = /^es\b/i.test(navigator.language || '') ? 'es' : 'en';
+         if (l === 'es') {
+            document.documentElement.lang = 'es';
+            document.title = 'Página no encontrada | Frank Sánchez';
+            document.querySelector('.code small').textContent = 'ERROR NANOMÉTRICO';
+            document.querySelector('h1').textContent = 'No se encontró esta página';
+            document.querySelector('main p').innerHTML = 'Como una nanopartícula, puede que sea demasiado pequeña para verla&hellip; o simplemente no existe. Revisa la dirección o vuelve a la página de inicio.';
+            var names = { 'portfolio.html': 'Investigación', 'publications.html': 'Publicaciones', 'contact.html': 'Contacto' };
+            document.querySelector('.links a.main').textContent = 'Inicio';
+            document.querySelectorAll('[data-page]').forEach(function (a) { var n = names[a.getAttribute('data-page')]; if (n) a.textContent = n; });
+         }
       })();
    </script>
 </body>
