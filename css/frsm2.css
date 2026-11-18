@@ -1904,3 +1904,20 @@ body.lab-stuck .lab-top .navbar-collapse { max-height: calc(100vh - 110px); over
 .lab-tools.lab-tools-4 { grid-template-columns: repeat(4, 1fr); }
 @media (max-width: 991px) { .lab-tools.lab-tools-4 { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 575px) { .lab-tools.lab-tools-4 { grid-template-columns: 1fr; } }
+/* 2.0.8 · memory cards: text scales with the card width (container query units) */
+.mm-card { container-type: inline-size; }
+.mm-face { overflow: hidden; }
+.mm-front { padding: 6px 7px; font-size: clamp(10px, 10.5cqi, 16px); line-height: 1.22; overflow-wrap: anywhere; hyphens: auto; -webkit-hyphens: auto; }
+.mm-front.mat { font-size: clamp(13px, 17cqi, 26px); line-height: 1.1; overflow-wrap: normal; hyphens: none; white-space: nowrap; letter-spacing: -.2px; }
+.mm-front small { font-size: clamp(8.5px, 8cqi, 12px); line-height: 1.2; margin-top: 3px; }
+.mm-front sub, .mm-front sup { font-size: .7em; line-height: 0; }
+.mm-front sub { vertical-align: -.22em; }
+.mm-back { font-size: clamp(16px, 18cqi, 28px); }
+@media (max-width: 575px) {
+   .mm-card { aspect-ratio: 3 / 4; }
+   .mm-grid { gap: 5px; }
+   .mm-front { padding: 4px 3px; }
+   #juego-memoria .game-stage { padding: 8px; }
+}
+.mm-txt { display: block; max-width: 100%; }
+@media (max-width: 359px) { .mm-front.mat { font-size: 11.5px; letter-spacing: -.3px; } .mm-front { padding: 4px 2px; } }

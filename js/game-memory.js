@@ -43,8 +43,9 @@
    }
    function face(c) {
       var p = st.set[c.id];
-      if (c.kind === 'mat') return '<span class="mm-face mm-front mat">' + p[0] + '</span>';
-      return '<span class="mm-face mm-front">' + T(p[1][0], p[1][1]) + '<small>' + T(p[2][0], p[2][1]) + '</small></span>';
+      /* one inner block per face: the face is a flex box, so loose <sub> tags would become separate lines */
+      if (c.kind === 'mat') return '<span class="mm-face mm-front mat"><span class="mm-txt">' + p[0] + '</span></span>';
+      return '<span class="mm-face mm-front"><span class="mm-txt">' + T(p[1][0], p[1][1]) + '<small>' + T(p[2][0], p[2][1]) + '</small></span></span>';
    }
    function build() {
       var h = '';
