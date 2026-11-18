@@ -7,14 +7,14 @@
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <!-- site metas -->
       <title data-es="Laboratorio virtual | Frank Sánchez">Virtual Lab | Frank Sánchez</title>
-      <meta name="description" content="Virtual lab: Scherrer crystallite-size calculator with Williamson–Hall analysis, interactive 3D crystal structures (NH4VO3, NH4V3O8, V2O5, ZnO polymorphs, Ag, Mn3O4, spinels, forsterite) and their simulated XRD patterns.">
+      <meta name="description" content="Virtual lab: Scherrer, Tauc and Urbach calculators, 3D crystal structures with simulated XRD, synthesis calculator and interactive lessons on Bragg diffraction, quantum dots and spectroscopy units.">
       <meta name="author" content="Frank R. Sánchez-Monteza">
       <link rel="canonical" href="https://ckimper.github.io/frank.sanchez/lab.html">
       <!-- share preview (WhatsApp, LinkedIn, Facebook, X) -->
       <meta property="og:type" content="website">
       <meta property="og:site_name" content="Frank R. Sánchez-Monteza">
       <meta property="og:title" content="Virtual Lab | Frank Sánchez">
-      <meta property="og:description" content="Scherrer calculator with Williamson–Hall analysis and an interactive 3D model of Mn3O4.">
+      <meta property="og:description" content="Virtual lab: Scherrer, Tauc and Urbach calculators, 3D crystal structures with simulated XRD, synthesis calculator and interactive lessons on Bragg diffraction, quantum dots and spectroscopy units.">
       <meta property="og:url" content="https://ckimper.github.io/frank.sanchez/lab.html">
       <meta property="og:image" content="https://ckimper.github.io/frank.sanchez/images/og-image.jpg">
       <meta property="og:image:width" content="1200">
@@ -77,249 +77,91 @@
       </div>
       <!-- header section end -->
 
-      <!-- lab intro start -->
+      <!-- lab tools menu -->
+      <nav class="lab-subnav" aria-label="Lab tools" data-es-aria-label="Herramientas del laboratorio">
+         <div class="container">
+            <a href="lab.html" class="lab-subnav-home active"><i class="fa fa-th" aria-hidden="true"></i> <span data-es="Laboratorio">Lab</span></a>
+            <a href="lab-scherrer.html"><i class="fa fa-crosshairs" aria-hidden="true"></i> <span>Scherrer</span></a>
+            <a href="lab-tauc.html"><i class="fa fa-sun-o" aria-hidden="true"></i> <span>Tauc</span></a>
+            <a href="lab-urbach.html"><i class="fa fa-signal" aria-hidden="true"></i> <span>Urbach</span></a>
+            <a href="lab-estructuras.html"><i class="fa fa-dot-circle-o" aria-hidden="true"></i> <span data-es="Estructuras y DRX">Structures &amp; XRD</span></a>
+            <a href="lab-sintesis.html"><i class="fa fa-flask" aria-hidden="true"></i> <span data-es="Síntesis">Synthesis</span></a>
+            <a href="lab-bragg.html"><i class="fa fa-bolt" aria-hidden="true"></i> <span>Bragg</span></a>
+            <a href="lab-punto-cuantico.html"><i class="fa fa-lightbulb-o" aria-hidden="true"></i> <span data-es="Punto cuántico">Quantum dot</span></a>
+            <a href="lab-conversor.html"><i class="fa fa-exchange" aria-hidden="true"></i> <span data-es="Conversor">Unit converter</span></a>
+         </div>
+      </nav>
+
+      <!-- lab hub start -->
       <section class="frsm-section lab-intro">
          <div class="container">
             <h1 class="frsm-title" data-es="Laboratorio <span>virtual</span>">Virtual <span>Lab</span></h1>
-            <p class="frsm-lead" data-es="Herramientas interactivas que uso en mi investigación. Calcula el tamaño de cristalito a partir de tus picos de difracción de rayos X, o explora en 3D once estructuras cristalinas con su difractograma simulado.">Interactive tools from my research. Calculate the crystallite size from your X-ray diffraction peaks, or explore eleven crystal structures in 3D with their simulated XRD patterns.</p>
-            <div class="lab-jump">
-               <a href="#scherrer" class="lab-jump-card">
-                  <span class="frsm-icon"><i class="fa fa-crosshairs" aria-hidden="true"></i></span>
-                  <span><b data-es="Calculadora de Scherrer">Scherrer calculator</b>
-                  <small data-es="Tamaño de cristalito, microdeformación y Williamson&ndash;Hall">Crystallite size, microstrain and Williamson&ndash;Hall</small></span>
-               </a>
-               <a href="#structure" class="lab-jump-card">
-                  <span class="frsm-icon"><i class="fa fa-dot-circle-o" aria-hidden="true"></i></span>
-                  <span><b data-es="Estructuras 3D y DRX">3D structures &amp; XRD</b>
-                  <small data-es="11 estructuras: vanadatos, ZnO, Ag, espinelas... con su difractograma">11 structures: vanadates, ZnO, Ag, spinels... with their XRD pattern</small></span>
-               </a>
-            </div>
-         </div>
-      </section>
-      <!-- lab intro end -->
+            <p class="frsm-lead" data-es="Herramientas interactivas para analizar datos de caracterización, explorar estructuras cristalinas, preparar síntesis y aprender física de materiales. Todo funciona en tu navegador: tus datos no se envían a ningún servidor.">Interactive tools to analyse characterization data, explore crystal structures, plan syntheses and learn materials physics. Everything runs in your browser: your data is never sent to a server.</p>
 
-      <!-- scherrer start -->
-      <section class="frsm-section frsm-alt" id="scherrer">
-         <div class="container">
-            <h2 class="frsm-title" data-es="Calculadora de <span>Scherrer</span>">Scherrer <span>Calculator</span></h2>
-            <p class="frsm-lead" data-es="La ecuación de Scherrer relaciona el ensanchamiento de un pico de difracción con el tamaño de los dominios cristalinos: cuanto más pequeño el cristalito, más ancho el pico.">The Scherrer equation relates the broadening of a diffraction peak to the size of the crystalline domains: the smaller the crystallite, the broader the peak.</p>
-
-            <div class="formula lab-formula">D = K&lambda; / (&beta; cos&theta;)</div>
-
-            <div class="lab-calc">
-               <form id="sch-form" class="lab-panel" novalidate>
-                  <h3 data-es="Datos del pico">Peak data</h3>
-                  <label class="cf-field">
-                     <span data-es="Radiación (longitud de onda &lambda;)">Radiation (wavelength &lambda;)</span>
-                     <select id="sch-lambda">
-                        <option value="1.5406">Cu K&alpha;&#8321; &mdash; 1.5406 &Aring;</option>
-                        <option value="1.5418">Cu K&alpha; (avg.) &mdash; 1.5418 &Aring;</option>
-                        <option value="1.7890">Co K&alpha;&#8321; &mdash; 1.7890 &Aring;</option>
-                        <option value="0.7093">Mo K&alpha;&#8321; &mdash; 0.7093 &Aring;</option>
-                        <option value="2.2897">Cr K&alpha;&#8321; &mdash; 2.2897 &Aring;</option>
-                        <option value="custom" data-es="Otra&hellip;">Other&hellip;</option>
-                     </select>
-                  </label>
-                  <label class="cf-field" id="sch-lambda-custom-wrap" hidden>
-                     <span data-es="&lambda; (&Aring;)">&lambda; (&Aring;)</span>
-                     <input type="number" id="sch-lambda-custom" step="0.0001" min="0" inputmode="decimal" value="1.5406">
-                  </label>
-                  <div class="cf-row">
-                     <label class="cf-field">
-                        <span>2&theta; (&deg;)</span>
-                        <input type="number" id="sch-2theta" step="0.01" min="0" max="180" inputmode="decimal" value="36.10">
-                     </label>
-                     <label class="cf-field">
-                        <span data-es="FWHM &beta; (&deg;)">FWHM &beta; (&deg;)</span>
-                        <input type="number" id="sch-fwhm" step="0.001" min="0" inputmode="decimal" value="0.400">
-                     </label>
-                  </div>
-                  <div class="cf-row">
-                     <label class="cf-field">
-                        <span data-es="Factor de forma K">Shape factor K</span>
-                        <input type="number" id="sch-k" step="0.01" min="0" inputmode="decimal" value="0.9">
-                     </label>
-                     <label class="cf-field">
-                        <span data-es="Ensanch. instrumental (&deg;)">Instrumental width (&deg;)</span>
-                        <input type="number" id="sch-inst" step="0.001" min="0" inputmode="decimal" value="0">
-                     </label>
-                  </div>
-                  <p class="lab-hint" data-es="K &asymp; 0,9 es el valor más usado (0,89 para esferas, 0,94 para cubos). Si conoces el ensanchamiento del equipo, se resta en cuadratura: &beta;&sup2; = &beta;<sub>medido</sub>&sup2; &minus; &beta;<sub>inst</sub>&sup2;.">K &asymp; 0.9 is the most common value (0.89 for spheres, 0.94 for cubes). If you know the instrumental broadening, it is subtracted in quadrature: &beta;&sup2; = &beta;<sub>meas</sub>&sup2; &minus; &beta;<sub>inst</sub>&sup2;.</p>
-                  <div class="form-status error" id="sch-msg" role="alert" hidden></div>
-               </form>
-
-               <div class="lab-results" aria-live="polite">
-                  <div class="lab-result main">
-                     <small data-es="Tamaño de cristalito D">Crystallite size D</small>
-                     <b><span id="sch-D">—</span> <em>nm</em></b>
-                  </div>
-                  <div class="lab-result">
-                     <small data-es="Distancia interplanar d (Bragg)">Interplanar spacing d (Bragg)</small>
-                     <b><span id="sch-d">—</span> <em>&Aring;</em></b>
-                  </div>
-                  <div class="lab-result">
-                     <small data-es="Microdeformación &epsilon; = &beta;/(4 tan&theta;)">Microstrain &epsilon; = &beta;/(4 tan&theta;)</small>
-                     <b><span id="sch-eps">—</span> <em>&times;10<sup>&minus;3</sup></em></b>
-                  </div>
-                  <div class="lab-result">
-                     <small data-es="Densidad de dislocaciones &delta; = 1/D&sup2;">Dislocation density &delta; = 1/D&sup2;</small>
-                     <b><span id="sch-delta">—</span> <em>&times;10<sup>15</sup> m<sup>&minus;2</sup></em></b>
-                  </div>
-                  <div class="lab-result">
-                     <small data-es="&beta; corregido">Corrected &beta;</small>
-                     <b><span id="sch-beta">—</span> <em>rad</em></b>
-                  </div>
-                  <p class="lab-warn" id="sch-warn" hidden data-es="<i class=&quot;fa fa-exclamation-triangle&quot; aria-hidden=&quot;true&quot;></i> Por encima de ~100 nm el ensanchamiento por tamaño es muy pequeño y el resultado es poco fiable."><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> Above ~100 nm the size broadening is very small and the result is not reliable.</p>
+            <div class="lab-hub">
+               <h2 class="lab-hub-title" data-es="Análisis de datos">Data analysis</h2>
+               <div class="lab-tools">
+                  <a href="lab-scherrer.html" class="lab-tool">
+                     <span class="frsm-icon"><i class="fa fa-crosshairs" aria-hidden="true"></i></span>
+                     <b data-es="Calculadora de Scherrer">Scherrer calculator</b>
+                     <small data-es="Tamaño de cristalito, microdeformación y Williamson–Hall a partir de picos de DRX">Crystallite size, microstrain and Williamson–Hall from XRD peaks</small>
+                     <span class="lab-tool-go"><span data-es="Abrir">Open</span> &rarr;</span>
+                  </a>
+                  <a href="lab-tauc.html" class="lab-tool">
+                     <span class="frsm-icon"><i class="fa fa-sun-o" aria-hidden="true"></i></span>
+                     <b data-es="Band gap (Tauc)">Band gap (Tauc)</b>
+                     <small data-es="Brecha óptica a partir de absorbancia o reflectancia difusa UV-Vis (Kubelka–Munk)">Optical gap from UV-Vis absorbance or diffuse reflectance (Kubelka–Munk)</small>
+                     <span class="lab-tool-go"><span data-es="Abrir">Open</span> &rarr;</span>
+                  </a>
+                  <a href="lab-urbach.html" class="lab-tool">
+                     <span class="frsm-icon"><i class="fa fa-signal" aria-hidden="true"></i></span>
+                     <b data-es="Energía de Urbach">Urbach energy</b>
+                     <small data-es="Desorden y estados de defecto a partir de la cola exponencial de absorción">Disorder and defect states from the exponential absorption tail</small>
+                     <span class="lab-tool-go"><span data-es="Abrir">Open</span> &rarr;</span>
+                  </a>
                </div>
-            </div>
 
-            <!-- Williamson-Hall -->
-            <div class="lab-panel lab-wh">
-               <h3 data-es="Varios picos y análisis de Williamson&ndash;Hall">Several peaks and Williamson&ndash;Hall analysis</h3>
-               <p class="lab-hint" data-es="Scherrer atribuye todo el ensanchamiento al tamaño. El método de Williamson&ndash;Hall separa el tamaño (D) y la microdeformación (&epsilon;) usando varios picos: &beta; cos&theta; = K&lambda;/D + 4&epsilon; sin&theta;. Se usan los valores de &lambda;, K y ensanchamiento instrumental de arriba.">Scherrer assigns all the broadening to size. The Williamson&ndash;Hall method separates size (D) and microstrain (&epsilon;) using several peaks: &beta; cos&theta; = K&lambda;/D + 4&epsilon; sin&theta;. The &lambda;, K and instrumental values above are used.</p>
-               <div class="lab-wh-grid">
-                  <div>
-                     <div class="lab-table-wrap">
-                        <table class="lab-table">
-                           <thead>
-                              <tr><th>hkl</th><th>2&theta; (&deg;)</th><th>FWHM (&deg;)</th><th>D (nm)</th><th></th></tr>
-                           </thead>
-                           <tbody id="wh-rows"></tbody>
-                        </table>
-                     </div>
-                     <div class="lab-actions">
-                        <button type="button" class="pub-btn" id="wh-add"><i class="fa fa-plus" aria-hidden="true"></i> <span data-es="Añadir pico">Add peak</span></button>
-                        <button type="button" class="pub-btn ghost" id="wh-example"><i class="fa fa-flask" aria-hidden="true"></i> <span data-es="Cargar ejemplo">Load example</span></button>
-                        <button type="button" class="pub-btn ghost" id="wh-clear"><i class="fa fa-eraser" aria-hidden="true"></i> <span data-es="Limpiar">Clear</span></button>
-                     </div>
-                     <p class="lab-hint" id="wh-note" hidden data-es="El ejemplo usa picos <b>simulados</b> del Mn<sub>3</sub>O<sub>4</sub> (Cu K&alpha;&#8321;) generados con D = 22 nm y &epsilon; = 1,5&times;10<sup>&minus;3</sup>; no son datos medidos.">The example uses <b>simulated</b> Mn<sub>3</sub>O<sub>4</sub> peaks (Cu K&alpha;&#8321;) generated with D = 22 nm and &epsilon; = 1.5&times;10<sup>&minus;3</sup>; they are not measured data.</p>
-                     <div class="lab-wh-stats">
-                        <div><small data-es="D promedio (Scherrer)">Mean D (Scherrer)</small><b><span id="wh-mean">—</span> nm</b><small><span id="wh-n">0</span> <span data-es="picos">peaks</span></small></div>
-                        <div><small data-es="D (Williamson&ndash;Hall)">D (Williamson&ndash;Hall)</small><b><span id="wh-Dwh">—</span> nm</b></div>
-                        <div><small data-es="&epsilon; (W&ndash;H)">&epsilon; (W&ndash;H)</small><b><span id="wh-eps">—</span> &times;10<sup>&minus;3</sup></b></div>
-                        <div><small>R&sup2;</small><b id="wh-r2">—</b></div>
-                     </div>
-                     <p class="lab-hint" id="wh-out" aria-live="polite"></p>
-                  </div>
-                  <div class="lab-plot">
-                     <svg id="wh-plot" viewBox="0 0 520 300" role="img" aria-label="Williamson–Hall plot"></svg>
-                  </div>
+               <h2 class="lab-hub-title" data-es="Estructuras y síntesis">Structures &amp; synthesis</h2>
+               <div class="lab-tools">
+                  <a href="lab-estructuras.html" class="lab-tool">
+                     <span class="frsm-icon"><i class="fa fa-dot-circle-o" aria-hidden="true"></i></span>
+                     <b data-es="Estructuras 3D y DRX">3D structures &amp; XRD</b>
+                     <small data-es="11 estructuras cristalinas con su difractograma simulado">11 crystal structures with their simulated diffraction pattern</small>
+                     <span class="lab-tool-go"><span data-es="Abrir">Open</span> &rarr;</span>
+                  </a>
+                  <a href="lab-sintesis.html" class="lab-tool">
+                     <span class="frsm-icon"><i class="fa fa-flask" aria-hidden="true"></i></span>
+                     <b data-es="Calculadora de síntesis">Synthesis calculator</b>
+                     <small data-es="Masas de precursor, diluciones y rendimiento teórico">Precursor masses, dilutions and theoretical yield</small>
+                     <span class="lab-tool-go"><span data-es="Abrir">Open</span> &rarr;</span>
+                  </a>
+               </div>
+
+               <h2 class="lab-hub-title" data-es="Aprende">Learn</h2>
+               <div class="lab-tools">
+                  <a href="lab-bragg.html" class="lab-tool">
+                     <span class="frsm-icon"><i class="fa fa-bolt" aria-hidden="true"></i></span>
+                     <b data-es="Ley de Bragg">Bragg's law</b>
+                     <small data-es="Mira cómo interfieren los rayos X en un cristal">See how X-rays interfere in a crystal</small>
+                     <span class="lab-tool-go"><span data-es="Abrir">Open</span> &rarr;</span>
+                  </a>
+                  <a href="lab-punto-cuantico.html" class="lab-tool">
+                     <span class="frsm-icon"><i class="fa fa-lightbulb-o" aria-hidden="true"></i></span>
+                     <b data-es="Punto cuántico">Quantum dot</b>
+                     <small data-es="Cambia el tamaño de una nanopartícula y mira cómo cambia su color">Change the size of a nanoparticle and watch its colour change</small>
+                     <span class="lab-tool-go"><span data-es="Abrir">Open</span> &rarr;</span>
+                  </a>
+                  <a href="lab-conversor.html" class="lab-tool">
+                     <span class="frsm-icon"><i class="fa fa-exchange" aria-hidden="true"></i></span>
+                     <b data-es="Conversor de unidades">Unit converter</b>
+                     <small data-es="nm, eV, cm⁻¹, THz… y desplazamiento Raman">nm, eV, cm⁻¹, THz… and Raman shift</small>
+                     <span class="lab-tool-go"><span data-es="Abrir">Open</span> &rarr;</span>
+                  </a>
                </div>
             </div>
          </div>
       </section>
-      <!-- scherrer end -->
-
-      <!-- 3D structure start -->
-      <section class="frsm-section" id="structure">
-         <div class="container">
-            <h2 class="frsm-title" data-es="Estructuras <span>3D</span> y DRX simulado">3D structures <span>&amp; XRD</span></h2>
-            <p class="frsm-lead" data-es="Once estructuras modeladas en VESTA y CIF: vanadatos, los tres polimorfos del ZnO, plata metálica, espinelas y forsterita. Elige una para explorar su celda unitaria en 3D y ver su difractograma de rayos X, calculado aquí mismo a partir de la estructura.">Eleven structures modelled in VESTA and CIF: vanadates, the three ZnO polymorphs, metallic silver, spinels and forsterite. Pick one to explore its unit cell in 3D and see its X-ray diffraction pattern, calculated right here from the structure.</p>
-
-            <div class="xtal-picker-wrap">
-               <div class="xtal-group">
-                  <span class="xtal-group-title" data-es="Vanadatos y óxidos de vanadio">Vanadates &amp; vanadium oxides</span>
-                  <div class="xtal-picker" role="group" aria-label="Vanadium compounds" data-es-aria-label="Compuestos de vanadio">
-                     <button type="button" data-structure-btn="nh4vo3"><b>NH<sub>4</sub>VO<sub>3</sub></b><small data-es="Metavanadato de amonio">Ammonium metavanadate</small></button>
-                     <button type="button" data-structure-btn="nh4v3o8"><b>NH<sub>4</sub>V<sub>3</sub>O<sub>8</sub></b><small data-es="Trivanadato de amonio">Ammonium trivanadate</small></button>
-                     <button type="button" data-structure-btn="v2o5"><b>V<sub>2</sub>O<sub>5</sub></b><small data-es="Pentóxido de vanadio">Vanadium pentoxide</small></button>
-                  </div>
-               </div>
-               <div class="xtal-group">
-                  <span class="xtal-group-title" data-es="Polimorfos del ZnO">ZnO polymorphs</span>
-                  <div class="xtal-picker" role="group" aria-label="ZnO" data-es-aria-label="ZnO">
-                     <button type="button" data-structure-btn="zno_wz"><b>ZnO</b><small data-es="Wurtzita">Wurtzite</small></button>
-                     <button type="button" data-structure-btn="zno_zb"><b>ZnO</b><small data-es="Blenda">Zinc blende</small></button>
-                     <button type="button" data-structure-btn="zno_rs"><b>ZnO</b><small data-es="Sal de roca">Rock salt</small></button>
-                  </div>
-               </div>
-               <div class="xtal-group">
-                  <span class="xtal-group-title" data-es="Metales">Metals</span>
-                  <div class="xtal-picker" role="group" aria-label="Metals" data-es-aria-label="Metales">
-                     <button type="button" data-structure-btn="ag"><b>Ag</b><small data-es="Plata metálica">Metallic silver</small></button>
-                  </div>
-               </div>
-               <div class="xtal-group">
-                  <span class="xtal-group-title" data-es="Espinelas y silicatos">Spinels &amp; silicates</span>
-                  <div class="xtal-picker" role="group" aria-label="Spinels and silicates" data-es-aria-label="Espinelas y silicatos">
-                     <button type="button" data-structure-btn="mn3o4"><b>Mn<sub>3</sub>O<sub>4</sub></b><small data-es="Hausmannita">Hausmannite</small></button>
-                     <button type="button" data-structure-btn="mgal2o4"><b>MgAl<sub>2</sub>O<sub>4</sub></b><small data-es="Espinela">Spinel</small></button>
-                     <button type="button" data-structure-btn="fe3o4"><b>Fe<sub>3</sub>O<sub>4</sub></b><small data-es="Magnetita">Magnetite</small></button>
-                     <button type="button" data-structure-btn="mg2sio4"><b>Mg<sub>2</sub>SiO<sub>4</sub></b><small data-es="Forsterita">Forsterite</small></button>
-                  </div>
-               </div>
-            </div>
-
-            <div class="xtal">
-               <div class="xtal-stage">
-                  <div class="xtal-toolbar" role="toolbar" aria-label="3D viewer options" data-es-aria-label="Opciones del visor 3D">
-                     <button type="button" id="xt-poly"><i class="fa fa-th" aria-hidden="true"></i> <span data-es="Poliedros">Polyhedra</span></button>
-                     <button type="button" id="xt-bonds"><i class="fa fa-link" aria-hidden="true"></i> <span data-es="Enlaces">Bonds</span></button>
-                     <button type="button" id="xt-spin"><i class="fa fa-refresh" aria-hidden="true"></i> <span data-es="Girar">Spin</span></button>
-                     <span class="xt-sep"></span>
-                     <button type="button" data-xt-cell="1" aria-pressed="true">1&times;1&times;1</button>
-                     <button type="button" data-xt-cell="2" aria-pressed="false">2&times;2&times;1</button>
-                     <span class="xt-sep"></span>
-                     <button type="button" data-xt-view="iso" data-es="Vista 3D">3D view</button>
-                     <button type="button" data-xt-view="c" data-es="Eje c">c axis</button>
-                     <button type="button" data-xt-view="a" data-es="Eje a">a axis</button>
-                  </div>
-                  <div class="xtal-view" id="xtal-view" data-structure="nh4vo3">
-                     <div class="xtal-fallback" id="xtal-fallback" hidden><i class="fa fa-dot-circle-o" aria-hidden="true"></i>
-                        <span data-es="Tu navegador no pudo cargar el visor 3D (necesita WebGL y conexión a internet).">Your browser could not load the 3D viewer (it needs WebGL and an internet connection).</span></div>
-                  </div>
-                  <div class="xtal-pick" id="xtal-pick" aria-live="polite"></div>
-               </div>
-               <aside class="xtal-info" id="xtal-info" aria-live="polite"></aside>
-            </div>
-
-            <!-- simulated XRD -->
-            <div class="lab-panel xrd-panel" id="xrd">
-               <div class="xrd-head">
-                  <h3><span data-es="Difractograma simulado">Simulated XRD pattern</span> &middot; <span id="xrd-name"></span></h3>
-                  <button type="button" class="pub-btn ghost" id="xrd-csv"><i class="fa fa-download" aria-hidden="true"></i> CSV</button>
-               </div>
-               <div class="xrd-controls">
-                  <label class="cf-field">
-                     <span data-es="Radiación">Radiation</span>
-                     <select id="xrd-lambda">
-                        <option value="1.5406">Cu K&alpha;&#8321; (1.5406 &Aring;)</option>
-                        <option value="1.789">Co K&alpha;&#8321; (1.7890 &Aring;)</option>
-                        <option value="0.7093">Mo K&alpha;&#8321; (0.7093 &Aring;)</option>
-                     </select>
-                  </label>
-                  <label class="cf-field xrd-size">
-                     <span><span data-es="Tamaño de cristalito">Crystallite size</span>: <b><span id="xrd-size-out">50</span> nm</b></span>
-                     <input type="range" id="xrd-size" min="5" max="200" step="1" value="22">
-                  </label>
-                  <label class="cf-field">
-                     <span>2&theta; min (&deg;)</span>
-                     <input type="number" id="xrd-min" min="5" max="150" step="1" value="10">
-                  </label>
-                  <label class="cf-field">
-                     <span>2&theta; max (&deg;)</span>
-                     <input type="number" id="xrd-max" min="10" max="160" step="1" value="80">
-                  </label>
-               </div>
-               <div class="xrd-plot-wrap">
-                  <svg id="xrd-plot" viewBox="0 0 900 340" role="img" aria-label="Simulated XRD pattern"></svg>
-                  <div class="xrd-tip" id="xrd-tip" hidden></div>
-               </div>
-               <p class="lab-hint" data-es="Calculado con factores de estructura (factores de dispersión de Cromer&ndash;Mann), factor de Lorentz-polarización, B = 0,5 &Aring;&sup2; y picos pseudo-Voigt cuyo ancho sigue la ecuación de Scherrer (+0,05&deg; instrumental). Mueve el tamaño de cristalito para ver cómo se ensanchan los picos en nanopartículas.">Calculated from structure factors (Cromer&ndash;Mann scattering factors), Lorentz-polarization factor, B = 0.5 &Aring;&sup2; and pseudo-Voigt peaks whose width follows the Scherrer equation (+0.05&deg; instrumental). Move the crystallite size to see how the peaks broaden in nanoparticles.</p>
-               <details class="xrd-table-box">
-                  <summary><span data-es="Tabla de reflexiones">Reflection list</span> (<span id="xrd-count">0</span>)</summary>
-                  <div class="lab-table-wrap">
-                     <table class="lab-table xrd-table">
-                        <thead><tr><th>2&theta; (&deg;)</th><th>d (&Aring;)</th><th>hkl</th><th data-es="Mult.">Mult.</th><th>I (%)</th><th>FWHM (&deg;)</th><th></th></tr></thead>
-                        <tbody id="xrd-rows"></tbody>
-                     </table>
-                  </div>
-                  <p class="lab-hint" data-es="El botón «Scherrer &rarr;» envía el pico a la calculadora de arriba: debería devolverte el tamaño de cristalito elegido.">The &ldquo;Scherrer &rarr;&rdquo; button sends the peak to the calculator above: it should give you back the crystallite size you chose.</p>
-               </details>
-            </div>
-         </div>
-      </section>
-      <!-- 3D structure end -->
+      <!-- lab hub end -->
 
       <!-- footer section start -->
       <div class="footer_section">
@@ -357,13 +199,5 @@
       <script src="js/custom.js"></script>
       <script src="js/i18n.js"></script>
       <script src="js/frsm.js"></script>
-      <!-- Virtual lab -->
-      <script src="js/scherrer.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-      <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
-      <script src="js/structures-data.js"></script>
-      <script src="js/xrd-engine.js"></script>
-      <script src="js/crystal3d.js"></script>
-      <script src="js/xrd-ui.js"></script>
    </body>
 </html>

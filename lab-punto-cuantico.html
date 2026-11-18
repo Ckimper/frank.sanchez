@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <!-- basic -->
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <!-- site metas -->
+      <title data-es="Punto cuántico | Frank Sánchez">Quantum dot | Frank Sánchez</title>
+      <meta name="description" content="Interactive quantum dot: band gap and emission colour versus size for CdSe, CdS, CdTe, InP, ZnO, ZnS and PbS (Brus model).">
+      <meta name="author" content="Frank R. Sánchez-Monteza">
+      <link rel="canonical" href="https://ckimper.github.io/frank.sanchez/lab-punto-cuantico.html">
+      <!-- share preview (WhatsApp, LinkedIn, Facebook, X) -->
+      <meta property="og:type" content="website">
+      <meta property="og:site_name" content="Frank R. Sánchez-Monteza">
+      <meta property="og:title" content="Quantum dot | Frank Sánchez">
+      <meta property="og:description" content="Interactive quantum dot: band gap and emission colour versus size for CdSe, CdS, CdTe, InP, ZnO, ZnS and PbS (Brus model).">
+      <meta property="og:url" content="https://ckimper.github.io/frank.sanchez/lab-punto-cuantico.html">
+      <meta property="og:image" content="https://ckimper.github.io/frank.sanchez/images/og-image.jpg">
+      <meta property="og:image:width" content="1200">
+      <meta property="og:image:height" content="630">
+      <meta name="twitter:card" content="summary_large_image">
+      <!-- bootstrap css -->
+      <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+      <!-- style css -->
+      <link rel="stylesheet" type="text/css" href="css/style.css">
+      <!-- Responsive-->
+      <link rel="stylesheet" href="css/responsive.css">
+      <!-- fevicon -->
+      <link rel="icon" href="images/fev.jpg" type="image/jpeg" />
+      <!-- Scrollbar Custom CSS -->
+      <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
+      <!-- Tweaks for older IEs-->
+      <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+      <!-- fonts -->
+      <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+      <!-- FRSM 2.0 styles -->
+      <link rel="stylesheet" href="css/frsm2.css">
+      <script>(function(){var l;try{l=localStorage.getItem('frsm-lang')}catch(e){}if(l!=='es'&&l!=='en')l=/^es\b/i.test(navigator.language||'')?'es':'en';document.documentElement.setAttribute('data-lang',l);document.documentElement.lang=l})();</script>
+   </head>
+   <body>
+      <!-- header section start -->
+      <div class="header_section header_bg">
+         <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+               <div class="logo"><a href="index.html"><img src="images/logo3.png" alt="FRSM - Home"></a></div>
+               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" data-es-aria-label="Abrir menú">
+               <span class="navbar-toggler-icon"></span>
+               </button>
+               <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav ml-auto">
+                     <li class="nav-item">
+                        <a class="nav-link" href="index.html" data-es="Inicio">Home</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="portfolio.html" data-es="Investigación">Research</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="publications.html" data-es="Publicaciones">Publications</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="lab.html">Lab</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="service.html" data-es="Sobre mí">About me</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="blog.html">Blog</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="contact.html" data-es="Contacto">Contact</a>
+                     </li>
+                  </ul>
+               </div>
+            </nav>
+         </div>
+      </div>
+      <!-- header section end -->
+
+      <!-- lab tools menu -->
+      <nav class="lab-subnav" aria-label="Lab tools" data-es-aria-label="Herramientas del laboratorio">
+         <div class="container">
+            <a href="lab.html" class="lab-subnav-home"><i class="fa fa-th" aria-hidden="true"></i> <span data-es="Laboratorio">Lab</span></a>
+            <a href="lab-scherrer.html"><i class="fa fa-crosshairs" aria-hidden="true"></i> <span>Scherrer</span></a>
+            <a href="lab-tauc.html"><i class="fa fa-sun-o" aria-hidden="true"></i> <span>Tauc</span></a>
+            <a href="lab-urbach.html"><i class="fa fa-signal" aria-hidden="true"></i> <span>Urbach</span></a>
+            <a href="lab-estructuras.html"><i class="fa fa-dot-circle-o" aria-hidden="true"></i> <span data-es="Estructuras y DRX">Structures &amp; XRD</span></a>
+            <a href="lab-sintesis.html"><i class="fa fa-flask" aria-hidden="true"></i> <span data-es="Síntesis">Synthesis</span></a>
+            <a href="lab-bragg.html"><i class="fa fa-bolt" aria-hidden="true"></i> <span>Bragg</span></a>
+            <a href="lab-punto-cuantico.html" class="active" aria-current="page"><i class="fa fa-lightbulb-o" aria-hidden="true"></i> <span data-es="Punto cuántico">Quantum dot</span></a>
+            <a href="lab-conversor.html"><i class="fa fa-exchange" aria-hidden="true"></i> <span data-es="Conversor">Unit converter</span></a>
+         </div>
+      </nav>
+
+      <!-- qdot start -->
+      <section class="frsm-section" id="punto-cuantico">
+         <div class="container">
+            <h1 class="frsm-title" data-es="Punto <span>cuántico</span>">Quantum <span>dot</span></h1>
+            <p class="frsm-lead" data-es="Cuando una nanopartícula semiconductora es más pequeña que el radio de Bohr del excitón, los electrones quedan confinados y la brecha de energía crece. Resultado: el mismo material cambia de color con solo cambiar su tamaño.">When a semiconductor nanoparticle is smaller than the exciton Bohr radius, the electrons are confined and the band gap grows. Result: the same material changes colour just by changing its size.</p>
+            <div class="formula lab-formula">E(R) = E<sub>g</sub> + &#8463;&sup2;&pi;&sup2;/2R&sup2; (1/m<sub>e</sub>* + 1/m<sub>h</sub>*) &minus; 1,786 e&sup2;/4&pi;&epsilon;<sub>0</sub>&epsilon;<sub>r</sub>R</div>
+
+            <div class="qd-grid">
+               <div class="lab-panel">
+                  <label class="cf-field"><span data-es="Material">Material</span><select id="qd-mat"></select></label>
+                  <label class="cf-field"><span><span data-es="Diámetro">Diameter</span>: <b id="qd-d-out"></b></span><input type="range" id="qd-d" min="1.5" max="12" step="0.1" value="4"></label>
+                  <div class="qd-series" id="qd-series"></div>
+                  <div class="qd-bar-wrap">
+                     <div class="qd-bar" id="qd-bar"><span class="qd-marker" id="qd-marker"></span></div>
+                     <div class="qd-bar-lbl"><span>380 nm</span><span id="qd-out-of"></span><span>780 nm</span></div>
+                  </div>
+               </div>
+               <div class="qd-visual">
+                  <svg id="qd-dot" viewBox="0 0 300 300" role="img" aria-label="Quantum dot colour" data-es-aria-label="Color del punto cuántico"></svg>
+                  <p class="qd-color-name"><span data-es="Color emitido">Emitted colour</span>: <b id="qd-color"></b></p>
+               </div>
+               <div class="lab-results qd-results">
+                  <div class="lab-result main"><small data-es="Energía de la brecha">Gap energy</small><b><span id="qd-e">—</span> <em>eV</em></b></div>
+                  <div class="lab-result"><small data-es="Longitud de onda">Wavelength</small><b><span id="qd-l">—</span> <em>nm</em></b></div>
+                  <div class="lab-result"><small data-es="Aumento por confinamiento">Confinement shift</small><b id="qd-shift">—</b></div>
+                  <div class="lab-result"><small data-es="Radio de Bohr del excitón">Exciton Bohr radius</small><b id="qd-ab">—</b></div>
+                  <div class="lab-result qd-wide"><small data-es="Régimen">Regime</small><b class="tc-small" id="qd-regime">—</b></div>
+                  <div class="lab-result qd-wide" id="qd-yu-wrap"><small data-es="CdSe, curva empírica (Yu et al. 2003)">CdSe, empirical curve (Yu et al. 2003)</small><b class="tc-small" id="qd-yu">—</b></div>
+               </div>
+            </div>
+            <div class="lab-panel">
+               <h3 data-es="Brecha frente al tamaño">Gap versus size</h3>
+               <div class="xrd-plot-wrap"><svg id="qd-plot" viewBox="0 0 560 280" role="img" aria-label="Gap vs size"></svg></div>
+               <p class="lab-hint" data-es="Modelo de Brus (masa efectiva): da la tendencia correcta pero sobreestima la brecha en partículas muy pequeñas (&lt; 3 nm). Para CdSe se muestra además la curva empírica de Yu et al., Chem. Mater. 15 (2003) 2854 (línea azul), basada en mediciones reales. Las masas efectivas y permitividades son valores típicos de la literatura.">Brus effective-mass model: it gives the right trend but overestimates the gap in very small particles (&lt; 3 nm). For CdSe the empirical curve of Yu et al., Chem. Mater. 15 (2003) 2854 (blue line), based on real measurements, is also shown. Effective masses and permittivities are typical literature values.</p>
+            </div>
+         </div>
+      </section>
+      <!-- qdot end -->
+
+      <!-- footer section start -->
+      <div class="footer_section">
+         <div class="container">
+            <div class="location_text">
+               <ul>
+                  <li>
+                     <a href="https://www.linkedin.com/in/frank-r-sanchez-monteza-41bb55163/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                  </li>
+                  <li>
+                     <a href="https://orcid.org/0000-0002-4278-1103" target="_blank" rel="noopener" aria-label="ORCID"><span class="orcid-id">iD</span></a>
+                  </li>
+                  <li>
+                     <a href="contact.html" aria-label="Contact" data-es-aria-label="Contacto"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+                  </li>
+               </ul>
+            </div>
+         </div>
+      </div>
+      <!-- footer section end -->
+      <!-- copyright section start -->
+      <div class="copyright_section">
+         <div class="container">
+            <p class="copyright_text" data-es="&copy; 2026 Frank R. Sánchez-Monteza. Diseño de <a href=&quot;https://html.design&quot;>Free Html Templates</a> &middot; Distribución de <a href=&quot;https://themewagon.com&quot;>ThemeWagon</a>">&copy; 2026 Frank R. Sánchez-Monteza. Design by <a href="https://html.design">Free Html Templates</a> &middot; Distribution by <a href="https://themewagon.com">ThemeWagon</a></p>
+         </div>
+      </div>
+      <!-- copyright section end -->
+      <!-- Javascript files-->
+      <script src="js/jquery.min.js"></script>
+      <script src="js/popper.min.js"></script>
+      <script src="js/bootstrap.bundle.min.js"></script>
+      <script src="js/jquery-3.0.0.min.js"></script>
+      <script src="js/plugin.js"></script>
+      <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+      <script src="js/custom.js"></script>
+      <script src="js/i18n.js"></script>
+      <script src="js/frsm.js"></script>
+      <!-- Virtual lab -->
+      <script src="js/qdot.js"></script>
+   </body>
+</html>

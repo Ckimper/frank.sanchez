@@ -184,6 +184,20 @@
       svg.innerHTML = g;
    }
 
+   /* values sent from another page, e.g. lab-scherrer.html?tth=36.17&fwhm=0.383&inst=0.05&lambda=1.5406 */
+   (function () {
+      var q = new URLSearchParams(location.search);
+      if (!q.has('tth')) return;
+      var lam = q.get('lambda');
+      if (lam) {
+         var opt = [].slice.call($('sch-lambda').options).filter(function (o) { return Math.abs(parseFloat(o.value) - parseFloat(lam)) < 1e-4; })[0];
+         if (opt) $('sch-lambda').value = opt.value; else { $('sch-lambda').value = 'custom'; $('sch-lambda-custom').value = lam; $('sch-lambda-custom-wrap').hidden = false; }
+      }
+      $('sch-2theta').value = q.get('tth');
+      if (q.has('fwhm')) $('sch-fwhm').value = q.get('fwhm');
+      if (q.has('inst')) $('sch-inst').value = q.get('inst');
+      var note = $('sch-from-xrd'); if (note) note.hidden = false;
+   })();
    addRow(); addRow();
    single();
    if (window.frsmI18n) window.frsmI18n.onChange(single);

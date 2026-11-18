@@ -109,7 +109,7 @@
       rows.forEach(function (p, i) {
          html += '<tr><td>' + fmt(p.tth, 2) + '</td><td>' + fmt(p.d, 4) + '</td><td>(' + hklText(p.hkl) + ')</td><td>' + p.mult + '</td>' +
             '<td><span class="xrd-bar" style="width:' + Math.max(2, p.rel * .6) + 'px"></span>' + fmt(p.rel, 1) + '</td><td>' + fmt(p.fwhm, 3) + '</td>' +
-            '<td><button type="button" class="xrd-use" data-i="' + res.peaks.indexOf(p) + '" title="' + T('Send to the Scherrer calculator', 'Enviar a la calculadora de Scherrer') + '">Scherrer &rarr;</button></td></tr>';
+            '<td><button type="button" class="xrd-use" data-i="' + res.peaks.indexOf(p) + '" title="' + T('Open in the Scherrer calculator', 'Abrir en la calculadora de Scherrer') + '">Scherrer &rarr;</button></td></tr>';
       });
       $('xrd-rows').innerHTML = html;
       $('xrd-count').textContent = rows.length;
@@ -118,6 +118,10 @@
       var b = e.target.closest('.xrd-use'); if (!b) return;
       var p = res.peaks[+b.getAttribute('data-i')];
       var lam = $('sch-lambda');
+      if (!lam) {   /* calculator lives on its own page: pass the peak in the URL */
+         location.href = 'lab-scherrer.html?tth=' + p.tth.toFixed(2) + '&fwhm=' + p.fwhm.toFixed(3) + '&inst=0.05&lambda=' + res.lambda.toFixed(4) + '#scherrer';
+         return;
+      }
       if (lam) {
          var v = String(res.lambda.toFixed(4));
          var opt = [].slice.call(lam.options).filter(function (o) { return o.value === v; })[0];

@@ -54,10 +54,17 @@ var GOATCOUNTER_CODE = 'franksm';
 
    /* Mark the current page in the menu */
    var page = location.pathname.split('/').pop() || 'index.html';
+   if (/^lab-.*\.html$/.test(page)) page = 'lab.html';   /* every lab tool belongs to the Lab menu item */
    document.querySelectorAll('.navbar-nav .nav-link').forEach(function (a) {
       if (a.getAttribute('href') === page) {
          a.classList.add('active');
          a.setAttribute('aria-current', 'page');
       }
    });
+
+   /* Lab tools menu: bring the current tool into view on small screens */
+   var cur = document.querySelector('.lab-subnav a.active');
+   if (cur && cur.parentNode.scrollWidth > cur.parentNode.clientWidth) {
+      cur.parentNode.scrollLeft = cur.offsetLeft - (cur.parentNode.clientWidth - cur.offsetWidth) / 2;
+   }
 })();

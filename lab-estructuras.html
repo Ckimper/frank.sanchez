@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <!-- basic -->
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <!-- site metas -->
+      <title data-es="Estructuras 3D y DRX | Frank Sánchez">3D structures & XRD | Frank Sánchez</title>
+      <meta name="description" content="Interactive 3D crystal structures (vanadates, ZnO polymorphs, silver, spinels, forsterite) with their simulated powder XRD patterns.">
+      <meta name="author" content="Frank R. Sánchez-Monteza">
+      <link rel="canonical" href="https://ckimper.github.io/frank.sanchez/lab-estructuras.html">
+      <!-- share preview (WhatsApp, LinkedIn, Facebook, X) -->
+      <meta property="og:type" content="website">
+      <meta property="og:site_name" content="Frank R. Sánchez-Monteza">
+      <meta property="og:title" content="3D structures & XRD | Frank Sánchez">
+      <meta property="og:description" content="Interactive 3D crystal structures (vanadates, ZnO polymorphs, silver, spinels, forsterite) with their simulated powder XRD patterns.">
+      <meta property="og:url" content="https://ckimper.github.io/frank.sanchez/lab-estructuras.html">
+      <meta property="og:image" content="https://ckimper.github.io/frank.sanchez/images/og-image.jpg">
+      <meta property="og:image:width" content="1200">
+      <meta property="og:image:height" content="630">
+      <meta name="twitter:card" content="summary_large_image">
+      <!-- bootstrap css -->
+      <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+      <!-- style css -->
+      <link rel="stylesheet" type="text/css" href="css/style.css">
+      <!-- Responsive-->
+      <link rel="stylesheet" href="css/responsive.css">
+      <!-- fevicon -->
+      <link rel="icon" href="images/fev.jpg" type="image/jpeg" />
+      <!-- Scrollbar Custom CSS -->
+      <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
+      <!-- Tweaks for older IEs-->
+      <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+      <!-- fonts -->
+      <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+      <!-- FRSM 2.0 styles -->
+      <link rel="stylesheet" href="css/frsm2.css">
+      <script>(function(){var l;try{l=localStorage.getItem('frsm-lang')}catch(e){}if(l!=='es'&&l!=='en')l=/^es\b/i.test(navigator.language||'')?'es':'en';document.documentElement.setAttribute('data-lang',l);document.documentElement.lang=l})();</script>
+   </head>
+   <body>
+      <!-- header section start -->
+      <div class="header_section header_bg">
+         <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+               <div class="logo"><a href="index.html"><img src="images/logo3.png" alt="FRSM - Home"></a></div>
+               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" data-es-aria-label="Abrir menú">
+               <span class="navbar-toggler-icon"></span>
+               </button>
+               <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav ml-auto">
+                     <li class="nav-item">
+                        <a class="nav-link" href="index.html" data-es="Inicio">Home</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="portfolio.html" data-es="Investigación">Research</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="publications.html" data-es="Publicaciones">Publications</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="lab.html">Lab</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="service.html" data-es="Sobre mí">About me</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="blog.html">Blog</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="contact.html" data-es="Contacto">Contact</a>
+                     </li>
+                  </ul>
+               </div>
+            </nav>
+         </div>
+      </div>
+      <!-- header section end -->
+
+      <!-- lab tools menu -->
+      <nav class="lab-subnav" aria-label="Lab tools" data-es-aria-label="Herramientas del laboratorio">
+         <div class="container">
+            <a href="lab.html" class="lab-subnav-home"><i class="fa fa-th" aria-hidden="true"></i> <span data-es="Laboratorio">Lab</span></a>
+            <a href="lab-scherrer.html"><i class="fa fa-crosshairs" aria-hidden="true"></i> <span>Scherrer</span></a>
+            <a href="lab-tauc.html"><i class="fa fa-sun-o" aria-hidden="true"></i> <span>Tauc</span></a>
+            <a href="lab-urbach.html"><i class="fa fa-signal" aria-hidden="true"></i> <span>Urbach</span></a>
+            <a href="lab-estructuras.html" class="active" aria-current="page"><i class="fa fa-dot-circle-o" aria-hidden="true"></i> <span data-es="Estructuras y DRX">Structures &amp; XRD</span></a>
+            <a href="lab-sintesis.html"><i class="fa fa-flask" aria-hidden="true"></i> <span data-es="Síntesis">Synthesis</span></a>
+            <a href="lab-bragg.html"><i class="fa fa-bolt" aria-hidden="true"></i> <span>Bragg</span></a>
+            <a href="lab-punto-cuantico.html"><i class="fa fa-lightbulb-o" aria-hidden="true"></i> <span data-es="Punto cuántico">Quantum dot</span></a>
+            <a href="lab-conversor.html"><i class="fa fa-exchange" aria-hidden="true"></i> <span data-es="Conversor">Unit converter</span></a>
+         </div>
+      </nav>
+
+      <!-- 3D structure start -->
+      <section class="frsm-section" id="structure">
+         <div class="container">
+            <h2 class="frsm-title" data-es="Estructuras <span>3D</span> y DRX simulado">3D structures <span>&amp; XRD</span></h2>
+            <p class="frsm-lead" data-es="Once estructuras modeladas en VESTA y CIF: vanadatos, los tres polimorfos del ZnO, plata metálica, espinelas y forsterita. Elige una para explorar su celda unitaria en 3D y ver su difractograma de rayos X, calculado aquí mismo a partir de la estructura.">Eleven structures modelled in VESTA and CIF: vanadates, the three ZnO polymorphs, metallic silver, spinels and forsterite. Pick one to explore its unit cell in 3D and see its X-ray diffraction pattern, calculated right here from the structure.</p>
+
+            <div class="xtal-picker-wrap">
+               <div class="xtal-group">
+                  <span class="xtal-group-title" data-es="Vanadatos y óxidos de vanadio">Vanadates &amp; vanadium oxides</span>
+                  <div class="xtal-picker" role="group" aria-label="Vanadium compounds" data-es-aria-label="Compuestos de vanadio">
+                     <button type="button" data-structure-btn="nh4vo3"><b>NH<sub>4</sub>VO<sub>3</sub></b><small data-es="Metavanadato de amonio">Ammonium metavanadate</small></button>
+                     <button type="button" data-structure-btn="nh4v3o8"><b>NH<sub>4</sub>V<sub>3</sub>O<sub>8</sub></b><small data-es="Trivanadato de amonio">Ammonium trivanadate</small></button>
+                     <button type="button" data-structure-btn="v2o5"><b>V<sub>2</sub>O<sub>5</sub></b><small data-es="Pentóxido de vanadio">Vanadium pentoxide</small></button>
+                  </div>
+               </div>
+               <div class="xtal-group">
+                  <span class="xtal-group-title" data-es="Polimorfos del ZnO">ZnO polymorphs</span>
+                  <div class="xtal-picker" role="group" aria-label="ZnO" data-es-aria-label="ZnO">
+                     <button type="button" data-structure-btn="zno_wz"><b>ZnO</b><small data-es="Wurtzita">Wurtzite</small></button>
+                     <button type="button" data-structure-btn="zno_zb"><b>ZnO</b><small data-es="Blenda">Zinc blende</small></button>
+                     <button type="button" data-structure-btn="zno_rs"><b>ZnO</b><small data-es="Sal de roca">Rock salt</small></button>
+                  </div>
+               </div>
+               <div class="xtal-group">
+                  <span class="xtal-group-title" data-es="Metales">Metals</span>
+                  <div class="xtal-picker" role="group" aria-label="Metals" data-es-aria-label="Metales">
+                     <button type="button" data-structure-btn="ag"><b>Ag</b><small data-es="Plata metálica">Metallic silver</small></button>
+                  </div>
+               </div>
+               <div class="xtal-group">
+                  <span class="xtal-group-title" data-es="Espinelas y silicatos">Spinels &amp; silicates</span>
+                  <div class="xtal-picker" role="group" aria-label="Spinels and silicates" data-es-aria-label="Espinelas y silicatos">
+                     <button type="button" data-structure-btn="mn3o4"><b>Mn<sub>3</sub>O<sub>4</sub></b><small data-es="Hausmannita">Hausmannite</small></button>
+                     <button type="button" data-structure-btn="mgal2o4"><b>MgAl<sub>2</sub>O<sub>4</sub></b><small data-es="Espinela">Spinel</small></button>
+                     <button type="button" data-structure-btn="fe3o4"><b>Fe<sub>3</sub>O<sub>4</sub></b><small data-es="Magnetita">Magnetite</small></button>
+                     <button type="button" data-structure-btn="mg2sio4"><b>Mg<sub>2</sub>SiO<sub>4</sub></b><small data-es="Forsterita">Forsterite</small></button>
+                  </div>
+               </div>
+            </div>
+
+            <div class="xtal">
+               <div class="xtal-stage">
+                  <div class="xtal-toolbar" role="toolbar" aria-label="3D viewer options" data-es-aria-label="Opciones del visor 3D">
+                     <button type="button" id="xt-poly"><i class="fa fa-th" aria-hidden="true"></i> <span data-es="Poliedros">Polyhedra</span></button>
+                     <button type="button" id="xt-bonds"><i class="fa fa-link" aria-hidden="true"></i> <span data-es="Enlaces">Bonds</span></button>
+                     <button type="button" id="xt-spin"><i class="fa fa-refresh" aria-hidden="true"></i> <span data-es="Girar">Spin</span></button>
+                     <span class="xt-sep"></span>
+                     <button type="button" data-xt-cell="1" aria-pressed="true">1&times;1&times;1</button>
+                     <button type="button" data-xt-cell="2" aria-pressed="false">2&times;2&times;1</button>
+                     <span class="xt-sep"></span>
+                     <button type="button" data-xt-view="iso" data-es="Vista 3D">3D view</button>
+                     <button type="button" data-xt-view="c" data-es="Eje c">c axis</button>
+                     <button type="button" data-xt-view="a" data-es="Eje a">a axis</button>
+                  </div>
+                  <div class="xtal-view" id="xtal-view" data-structure="nh4vo3">
+                     <div class="xtal-fallback" id="xtal-fallback" hidden><i class="fa fa-dot-circle-o" aria-hidden="true"></i>
+                        <span data-es="Tu navegador no pudo cargar el visor 3D (necesita WebGL y conexión a internet).">Your browser could not load the 3D viewer (it needs WebGL and an internet connection).</span></div>
+                  </div>
+                  <div class="xtal-pick" id="xtal-pick" aria-live="polite"></div>
+               </div>
+               <aside class="xtal-info" id="xtal-info" aria-live="polite"></aside>
+            </div>
+
+            <!-- simulated XRD -->
+            <div class="lab-panel xrd-panel" id="xrd">
+               <div class="xrd-head">
+                  <h3><span data-es="Difractograma simulado">Simulated XRD pattern</span> &middot; <span id="xrd-name"></span></h3>
+                  <button type="button" class="pub-btn ghost" id="xrd-csv"><i class="fa fa-download" aria-hidden="true"></i> CSV</button>
+               </div>
+               <div class="xrd-controls">
+                  <label class="cf-field">
+                     <span data-es="Radiación">Radiation</span>
+                     <select id="xrd-lambda">
+                        <option value="1.5406">Cu K&alpha;&#8321; (1.5406 &Aring;)</option>
+                        <option value="1.789">Co K&alpha;&#8321; (1.7890 &Aring;)</option>
+                        <option value="0.7093">Mo K&alpha;&#8321; (0.7093 &Aring;)</option>
+                     </select>
+                  </label>
+                  <label class="cf-field xrd-size">
+                     <span><span data-es="Tamaño de cristalito">Crystallite size</span>: <b><span id="xrd-size-out">50</span> nm</b></span>
+                     <input type="range" id="xrd-size" min="5" max="200" step="1" value="22">
+                  </label>
+                  <label class="cf-field">
+                     <span>2&theta; min (&deg;)</span>
+                     <input type="number" id="xrd-min" min="5" max="150" step="1" value="10">
+                  </label>
+                  <label class="cf-field">
+                     <span>2&theta; max (&deg;)</span>
+                     <input type="number" id="xrd-max" min="10" max="160" step="1" value="80">
+                  </label>
+               </div>
+               <div class="xrd-plot-wrap">
+                  <svg id="xrd-plot" viewBox="0 0 900 340" role="img" aria-label="Simulated XRD pattern"></svg>
+                  <div class="xrd-tip" id="xrd-tip" hidden></div>
+               </div>
+               <p class="lab-hint" data-es="Calculado con factores de estructura (factores de dispersión de Cromer&ndash;Mann), factor de Lorentz-polarización, B = 0,5 &Aring;&sup2; y picos pseudo-Voigt cuyo ancho sigue la ecuación de Scherrer (+0,05&deg; instrumental). Mueve el tamaño de cristalito para ver cómo se ensanchan los picos en nanopartículas.">Calculated from structure factors (Cromer&ndash;Mann scattering factors), Lorentz-polarization factor, B = 0.5 &Aring;&sup2; and pseudo-Voigt peaks whose width follows the Scherrer equation (+0.05&deg; instrumental). Move the crystallite size to see how the peaks broaden in nanoparticles.</p>
+               <details class="xrd-table-box">
+                  <summary><span data-es="Tabla de reflexiones">Reflection list</span> (<span id="xrd-count">0</span>)</summary>
+                  <div class="lab-table-wrap">
+                     <table class="lab-table xrd-table">
+                        <thead><tr><th>2&theta; (&deg;)</th><th>d (&Aring;)</th><th>hkl</th><th data-es="Mult.">Mult.</th><th>I (%)</th><th>FWHM (&deg;)</th><th></th></tr></thead>
+                        <tbody id="xrd-rows"></tbody>
+                     </table>
+                  </div>
+                  <p class="lab-hint" data-es="El botón «Scherrer &rarr;» abre la calculadora de Scherrer con ese pico: debería devolverte el tamaño de cristalito elegido.">The &ldquo;Scherrer &rarr;&rdquo; button opens the Scherrer calculator with that peak: it should give you back the crystallite size you chose.</p>
+               </details>
+            </div>
+         </div>
+      </section>
+      <!-- 3D structure end -->
+
+      <!-- footer section start -->
+      <div class="footer_section">
+         <div class="container">
+            <div class="location_text">
+               <ul>
+                  <li>
+                     <a href="https://www.linkedin.com/in/frank-r-sanchez-monteza-41bb55163/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                  </li>
+                  <li>
+                     <a href="https://orcid.org/0000-0002-4278-1103" target="_blank" rel="noopener" aria-label="ORCID"><span class="orcid-id">iD</span></a>
+                  </li>
+                  <li>
+                     <a href="contact.html" aria-label="Contact" data-es-aria-label="Contacto"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+                  </li>
+               </ul>
+            </div>
+         </div>
+      </div>
+      <!-- footer section end -->
+      <!-- copyright section start -->
+      <div class="copyright_section">
+         <div class="container">
+            <p class="copyright_text" data-es="&copy; 2026 Frank R. Sánchez-Monteza. Diseño de <a href=&quot;https://html.design&quot;>Free Html Templates</a> &middot; Distribución de <a href=&quot;https://themewagon.com&quot;>ThemeWagon</a>">&copy; 2026 Frank R. Sánchez-Monteza. Design by <a href="https://html.design">Free Html Templates</a> &middot; Distribution by <a href="https://themewagon.com">ThemeWagon</a></p>
+         </div>
+      </div>
+      <!-- copyright section end -->
+      <!-- Javascript files-->
+      <script src="js/jquery.min.js"></script>
+      <script src="js/popper.min.js"></script>
+      <script src="js/bootstrap.bundle.min.js"></script>
+      <script src="js/jquery-3.0.0.min.js"></script>
+      <script src="js/plugin.js"></script>
+      <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+      <script src="js/custom.js"></script>
+      <script src="js/i18n.js"></script>
+      <script src="js/frsm.js"></script>
+      <!-- Virtual lab -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+      <script src="js/structures-data.js"></script>
+      <script src="js/xrd-engine.js"></script>
+      <script src="js/crystal3d.js"></script>
+      <script src="js/xrd-ui.js"></script>
+   </body>
+</html>
