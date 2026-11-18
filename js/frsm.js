@@ -42,6 +42,16 @@ var GOATCOUNTER_CODE = 'franksm';
       window.scrollTo({ top: 0, behavior: 'smooth' });
    });
 
+   /* "My Information" circles: the whole circle opens its link (phones have no hover) */
+   document.querySelectorAll('.box_main').forEach(function (box) {
+      var link = box.querySelector('a[href]');
+      if (!link) return;
+      box.addEventListener('click', function (ev) {
+         if (ev.target.closest('a')) return;
+         if (link.target === '_blank') window.open(link.href, '_blank', 'noopener'); else location.href = link.href;
+      });
+   });
+
    /* Mark the current page in the menu */
    var page = location.pathname.split('/').pop() || 'index.html';
    document.querySelectorAll('.navbar-nav .nav-link').forEach(function (a) {
