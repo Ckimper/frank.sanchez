@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <!-- basic -->
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <!-- site metas -->
+      <title data-es="Cazador de fotones | Frank Sánchez">Photon hunter | Frank Sánchez</title>
+      <meta name="description" content="Minigame: catch only the photons with energy above the band gap of the semiconductor.">
+      <meta name="author" content="Frank R. Sánchez-Monteza">
+      <link rel="canonical" href="https://ckimper.github.io/frank.sanchez/lab-juego-fotones.html">
+      <!-- share preview (WhatsApp, LinkedIn, Facebook, X) -->
+      <meta property="og:type" content="website">
+      <meta property="og:site_name" content="Frank R. Sánchez-Monteza">
+      <meta property="og:title" content="Photon hunter | Frank Sánchez">
+      <meta property="og:description" content="Minigame: catch only the photons with energy above the band gap of the semiconductor.">
+      <meta property="og:url" content="https://ckimper.github.io/frank.sanchez/lab-juego-fotones.html">
+      <meta property="og:image" content="https://ckimper.github.io/frank.sanchez/images/og-image.jpg">
+      <meta property="og:image:width" content="1200">
+      <meta property="og:image:height" content="630">
+      <meta name="twitter:card" content="summary_large_image">
+      <!-- bootstrap css -->
+      <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+      <!-- style css -->
+      <link rel="stylesheet" type="text/css" href="css/style.css">
+      <!-- Responsive-->
+      <link rel="stylesheet" href="css/responsive.css">
+      <!-- fevicon -->
+      <link rel="icon" href="images/fev.jpg" type="image/jpeg" />
+      <!-- Scrollbar Custom CSS -->
+      <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
+      <!-- Tweaks for older IEs-->
+      <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+      <!-- fonts -->
+      <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+      <!-- FRSM 2.0 styles -->
+      <link rel="stylesheet" href="css/frsm2.css">
+      <script>(function(){var l;try{l=localStorage.getItem('frsm-lang')}catch(e){}if(l!=='es'&&l!=='en')l=/^es\b/i.test(navigator.language||'')?'es':'en';document.documentElement.setAttribute('data-lang',l);document.documentElement.lang=l})();</script>
+   </head>
+   <body>
+      <!-- header section start -->
+      <div class="header_section header_bg">
+         <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+               <div class="logo"><a href="index.html"><img src="images/logo3.png" alt="FRSM - Home"></a></div>
+               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" data-es-aria-label="Abrir menú">
+               <span class="navbar-toggler-icon"></span>
+               </button>
+               <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav ml-auto">
+                     <li class="nav-item">
+                        <a class="nav-link" href="index.html" data-es="Inicio">Home</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="portfolio.html" data-es="Investigación">Research</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="publications.html" data-es="Publicaciones">Publications</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="lab.html">Lab</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="service.html" data-es="Sobre mí">About me</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="blog.html">Blog</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="contact.html" data-es="Contacto">Contact</a>
+                     </li>
+                  </ul>
+               </div>
+            </nav>
+         </div>
+      </div>
+      <!-- header section end -->
+
+      <!-- lab tools menu -->
+      <nav class="lab-subnav" aria-label="Lab tools" data-es-aria-label="Herramientas del laboratorio">
+         <div class="container">
+            <a href="lab.html" class="lab-subnav-home"><i class="fa fa-th" aria-hidden="true"></i> <span data-es="Laboratorio">Lab</span></a>
+            <a href="lab-scherrer.html"><i class="fa fa-crosshairs" aria-hidden="true"></i> <span>Scherrer</span></a>
+            <a href="lab-tauc.html"><i class="fa fa-sun-o" aria-hidden="true"></i> <span>Tauc</span></a>
+            <a href="lab-urbach.html"><i class="fa fa-signal" aria-hidden="true"></i> <span>Urbach</span></a>
+            <a href="lab-estructuras.html"><i class="fa fa-dot-circle-o" aria-hidden="true"></i> <span data-es="Estructuras y DRX">Structures &amp; XRD</span></a>
+            <a href="lab-sintesis.html"><i class="fa fa-flask" aria-hidden="true"></i> <span data-es="Síntesis">Synthesis</span></a>
+            <a href="lab-bragg.html"><i class="fa fa-bolt" aria-hidden="true"></i> <span>Bragg</span></a>
+            <a href="lab-punto-cuantico.html"><i class="fa fa-lightbulb-o" aria-hidden="true"></i> <span data-es="Punto cuántico">Quantum dot</span></a>
+            <a href="lab-conversor.html"><i class="fa fa-exchange" aria-hidden="true"></i> <span data-es="Conversor">Unit converter</span></a>
+            <a href="lab-juegos.html" class="active"><i class="fa fa-gamepad" aria-hidden="true"></i> <span data-es="Juegos">Games</span></a>
+         </div>
+      </nav>
+
+      <!-- game photons start -->
+      <section class="frsm-section" id="juego-fotones">
+         <div class="container game-wrap">
+            <p class="lab-back"><a href="lab-juegos.html"><i class="fa fa-angle-left" aria-hidden="true"></i> <span data-es="Todos los juegos">All games</span></a></p>
+            <h1 class="frsm-title" data-es="Cazador de <span>fotones</span>">Photon <span>hunter</span></h1>
+            <p class="frsm-lead" data-es="Eres un semiconductor. Toca solo los fotones con energía suficiente para excitar un electrón a través de la brecha (h&nu; &ge; E<sub>g</sub>) y deja pasar los demás. Cada 15 segundos cambia el material.">You are a semiconductor. Tap only the photons with enough energy to lift an electron across the gap (h&nu; &ge; E<sub>g</sub>) and let the others pass. The material changes every 15 seconds.</p>
+            <div class="game-hud"><div><small data-es="Etapa">Stage</small><b id="ph-stage">—</b></div><div class="hl"><small data-es="Puntos">Score</small><b id="ph-score">—</b></div><div><small data-es="Vidas">Lives</small><b id="ph-lives" class="ph-lives">♥♥♥♥♥</b></div><div><small data-es="Tiempo">Time</small><b id="ph-time">—</b></div></div>
+            <div class="game-stage">
+               <div class="ph-top"><span class="ph-mat" id="ph-mat">—</span><span class="ph-rule" id="ph-rule"></span><span class="ph-rule"><span data-es="Tu récord">Your best</span>: <b id="ph-best">—</b></span></div>
+               <canvas id="ph-canvas" class="ph-canvas" aria-label="Game area" data-es-aria-label="Área de juego"></canvas>
+               <div class="game-over" id="ph-start">
+                  <h3 data-es="¿Listo?">Ready?</h3>
+                  <p data-es="Los fotones caen con su longitud de onda escrita. Atrapa (toca) los que el material <b>absorbe</b>: &lambda; &le; 1240 / E<sub>g</sub>. Si tocas uno sin energía suficiente o dejas escapar uno que debía absorberse, pierdes una vida.">Photons fall with their wavelength written on them. Catch (tap) the ones the material <b>absorbs</b>: &lambda; &le; 1240 / E<sub>g</sub>. Tapping a photon without enough energy, or letting an absorbable one escape, costs a life.</p>
+                  <button type="button" class="pub-btn" id="ph-go"><i class="fa fa-play" aria-hidden="true"></i> <span data-es="Empezar">Start</span></button>
+               </div>
+                  <div class="game-over" id="ph-over" hidden>
+                     <h3 id="ph-over-title"></h3>
+                     <div class="big" id="ph-over-score"></div>
+                     <p id="ph-over-msg"></p>
+                     <button type="button" class="pub-btn" id="ph-again"><i class="fa fa-repeat" aria-hidden="true"></i> <span data-es="Jugar otra vez">Play again</span></button>
+                  </div>
+            </div>
+
+            <div class="lab-panel game-learn">
+               <h3 data-es="¿Qué aprendes?">What you learn</h3>
+               <ul>
+                  <li data-es="Un fotón lleva una energía E = hc/&lambda; = 1240/&lambda;(nm) eV: menor longitud de onda, más energía.">A photon carries E = hc/&lambda; = 1240/&lambda;(nm) eV: shorter wavelength, more energy.</li>
+                  <li data-es="Un semiconductor solo absorbe fotones con E &ge; E<sub>g</sub>; el resto lo atraviesa. Eso define su color: el ZnO es blanco y el CdSe, rojo oscuro.">A semiconductor only absorbs photons with E &ge; E<sub>g</sub>; the rest pass through. That sets its colour: ZnO is white, CdSe is dark red.</li>
+                  <li data-es="Es el borde de absorción que mides con UV-Vis y analizas con la gráfica de Tauc.">This is the absorption edge you measure with UV-Vis and analyse with the Tauc plot.</li>
+               </ul>
+               <p class="lab-hint"><a href="lab-tauc.html" data-es="Mide una brecha real con la calculadora de Tauc &rarr;">Measure a real band gap with the Tauc calculator &rarr;</a></p>
+            </div>
+         </div>
+      </section>
+      <!-- game photons end -->
+
+      <!-- footer section start -->
+      <div class="footer_section">
+         <div class="container">
+            <div class="location_text">
+               <ul>
+                  <li>
+                     <a href="https://www.linkedin.com/in/frank-r-sanchez-monteza-41bb55163/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                  </li>
+                  <li>
+                     <a href="https://orcid.org/0000-0002-4278-1103" target="_blank" rel="noopener" aria-label="ORCID"><span class="orcid-id">iD</span></a>
+                  </li>
+                  <li>
+                     <a href="contact.html" aria-label="Contact" data-es-aria-label="Contacto"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+                  </li>
+               </ul>
+            </div>
+         </div>
+      </div>
+      <!-- footer section end -->
+      <!-- copyright section start -->
+      <div class="copyright_section">
+         <div class="container">
+            <p class="copyright_text" data-es="&copy; 2026 Frank R. Sánchez-Monteza. Diseño de <a href=&quot;https://html.design&quot;>Free Html Templates</a> &middot; Distribución de <a href=&quot;https://themewagon.com&quot;>ThemeWagon</a>">&copy; 2026 Frank R. Sánchez-Monteza. Design by <a href="https://html.design">Free Html Templates</a> &middot; Distribution by <a href="https://themewagon.com">ThemeWagon</a></p>
+         </div>
+      </div>
+      <!-- copyright section end -->
+      <!-- Javascript files-->
+      <script src="js/jquery.min.js"></script>
+      <script src="js/popper.min.js"></script>
+      <script src="js/bootstrap.bundle.min.js"></script>
+      <script src="js/jquery-3.0.0.min.js"></script>
+      <script src="js/plugin.js"></script>
+      <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+      <script src="js/custom.js"></script>
+      <script src="js/i18n.js"></script>
+      <script src="js/frsm.js"></script>
+      <!-- Virtual lab -->
+      <script src="js/game-photons.js"></script>
+   </body>
+</html>

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <!-- basic -->
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <!-- site metas -->
+      <title data-es="Diana de Bragg | Frank Sánchez">Bragg target | Frank Sánchez</title>
+      <meta name="description" content="Minigame: aim the X-ray detector at the diffraction angle given by Bragg's law for real reflections.">
+      <meta name="author" content="Frank R. Sánchez-Monteza">
+      <link rel="canonical" href="https://ckimper.github.io/frank.sanchez/lab-juego-bragg.html">
+      <!-- share preview (WhatsApp, LinkedIn, Facebook, X) -->
+      <meta property="og:type" content="website">
+      <meta property="og:site_name" content="Frank R. Sánchez-Monteza">
+      <meta property="og:title" content="Bragg target | Frank Sánchez">
+      <meta property="og:description" content="Minigame: aim the X-ray detector at the diffraction angle given by Bragg's law for real reflections.">
+      <meta property="og:url" content="https://ckimper.github.io/frank.sanchez/lab-juego-bragg.html">
+      <meta property="og:image" content="https://ckimper.github.io/frank.sanchez/images/og-image.jpg">
+      <meta property="og:image:width" content="1200">
+      <meta property="og:image:height" content="630">
+      <meta name="twitter:card" content="summary_large_image">
+      <!-- bootstrap css -->
+      <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+      <!-- style css -->
+      <link rel="stylesheet" type="text/css" href="css/style.css">
+      <!-- Responsive-->
+      <link rel="stylesheet" href="css/responsive.css">
+      <!-- fevicon -->
+      <link rel="icon" href="images/fev.jpg" type="image/jpeg" />
+      <!-- Scrollbar Custom CSS -->
+      <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
+      <!-- Tweaks for older IEs-->
+      <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+      <!-- fonts -->
+      <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+      <!-- FRSM 2.0 styles -->
+      <link rel="stylesheet" href="css/frsm2.css">
+      <script>(function(){var l;try{l=localStorage.getItem('frsm-lang')}catch(e){}if(l!=='es'&&l!=='en')l=/^es\b/i.test(navigator.language||'')?'es':'en';document.documentElement.setAttribute('data-lang',l);document.documentElement.lang=l})();</script>
+   </head>
+   <body>
+      <!-- header section start -->
+      <div class="header_section header_bg">
+         <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+               <div class="logo"><a href="index.html"><img src="images/logo3.png" alt="FRSM - Home"></a></div>
+               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" data-es-aria-label="Abrir menú">
+               <span class="navbar-toggler-icon"></span>
+               </button>
+               <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav ml-auto">
+                     <li class="nav-item">
+                        <a class="nav-link" href="index.html" data-es="Inicio">Home</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="portfolio.html" data-es="Investigación">Research</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="publications.html" data-es="Publicaciones">Publications</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="lab.html">Lab</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="service.html" data-es="Sobre mí">About me</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="blog.html">Blog</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="contact.html" data-es="Contacto">Contact</a>
+                     </li>
+                  </ul>
+               </div>
+            </nav>
+         </div>
+      </div>
+      <!-- header section end -->
+
+      <!-- lab tools menu -->
+      <nav class="lab-subnav" aria-label="Lab tools" data-es-aria-label="Herramientas del laboratorio">
+         <div class="container">
+            <a href="lab.html" class="lab-subnav-home"><i class="fa fa-th" aria-hidden="true"></i> <span data-es="Laboratorio">Lab</span></a>
+            <a href="lab-scherrer.html"><i class="fa fa-crosshairs" aria-hidden="true"></i> <span>Scherrer</span></a>
+            <a href="lab-tauc.html"><i class="fa fa-sun-o" aria-hidden="true"></i> <span>Tauc</span></a>
+            <a href="lab-urbach.html"><i class="fa fa-signal" aria-hidden="true"></i> <span>Urbach</span></a>
+            <a href="lab-estructuras.html"><i class="fa fa-dot-circle-o" aria-hidden="true"></i> <span data-es="Estructuras y DRX">Structures &amp; XRD</span></a>
+            <a href="lab-sintesis.html"><i class="fa fa-flask" aria-hidden="true"></i> <span data-es="Síntesis">Synthesis</span></a>
+            <a href="lab-bragg.html"><i class="fa fa-bolt" aria-hidden="true"></i> <span>Bragg</span></a>
+            <a href="lab-punto-cuantico.html"><i class="fa fa-lightbulb-o" aria-hidden="true"></i> <span data-es="Punto cuántico">Quantum dot</span></a>
+            <a href="lab-conversor.html"><i class="fa fa-exchange" aria-hidden="true"></i> <span data-es="Conversor">Unit converter</span></a>
+            <a href="lab-juegos.html" class="active"><i class="fa fa-gamepad" aria-hidden="true"></i> <span data-es="Juegos">Games</span></a>
+         </div>
+      </nav>
+
+      <!-- game bragg start -->
+      <section class="frsm-section" id="juego-bragg">
+         <div class="container game-wrap">
+            <p class="lab-back"><a href="lab-juegos.html"><i class="fa fa-angle-left" aria-hidden="true"></i> <span data-es="Todos los juegos">All games</span></a></p>
+            <h1 class="frsm-title" data-es="Diana de <span>Bragg</span>">Bragg <span>target</span></h1>
+            <p class="frsm-lead" data-es="Cada ronda te da una reflexión real (material, plano y distancia d) y un tubo de rayos X. Mueve el detector al ángulo 2&theta; donde aparece el pico. Usa nλ = 2d sen&theta; con n = 1; puedes usar calculadora.">Each round gives you a real reflection (material, plane and d-spacing) and an X-ray tube. Move the detector to the angle 2&theta; where the peak appears. Use n&lambda; = 2d sin&theta; with n = 1; a calculator is allowed.</p>
+            <div class="game-hud"><div><small data-es="Ronda">Round</small><b id="bt-round">—</b></div><div class="hl"><small data-es="Puntos">Score</small><b id="bt-score">—</b></div><div><small data-es="Último tiro">Last shot</small><b id="bt-last">—</b></div><div><small data-es="Tu récord">Your best</small><b id="bt-best">—</b></div></div>
+            <div class="game-stage">
+               <div class="bt-grid">
+                  <svg id="bt-svg" class="game-svg bt-svg" viewBox="0 0 520 320" role="img" aria-label="Diffractometer: drag the detector" data-es-aria-label="Difractómetro: arrastra el detector"></svg>
+                  <div class="bt-card">
+                     <div class="bt-plane" id="bt-plane">—</div>
+                     <p id="bt-name"></p>
+                     <dl>
+                        <dt data-es="Distancia d">d-spacing</dt><dd id="bt-d">—</dd>
+                        <dt data-es="Tubo">Tube</dt><dd id="bt-tube">—</dd>
+                        <dt>&lambda;</dt><dd id="bt-lambda">—</dd>
+                     </dl>
+                     <p class="game-q" id="bt-hint-row" style="margin-top:10px" hidden><span data-es="Pista">Hint</span>: sin &theta; = &lambda; / 2d = <b id="bt-sin">—</b></p>
+                     <div class="bt-input">
+                        <button type="button" data-bt-step="-0.1" aria-label="−0.1°">&minus;</button>
+                        <label><span class="sr-only">2&theta; (°)</span><input id="bt-angle" type="text" inputmode="decimal" value="60"></label>
+                        <button type="button" data-bt-step="0.1" aria-label="+0.1°">+</button>
+                        <span>° (2&theta;)</span>
+                     </div>
+                     <div class="game-bar">
+                        <button type="button" class="pub-btn" id="bt-shoot"><i class="fa fa-bullseye" aria-hidden="true"></i> <span data-es="Medir">Measure</span></button>
+                        <button type="button" class="pub-btn ghost" id="bt-hint"><i class="fa fa-lightbulb-o" aria-hidden="true"></i> <span data-es="Pista (mitad)">Hint (half)</span></button>
+                     </div>
+                  </div>
+               </div>
+               <div id="bt-feedback" class="game-feedback" hidden></div>
+               <div class="game-bar">
+                  <button type="button" class="pub-btn" id="bt-next" hidden><span id="bt-next-label">Next</span> <i class="fa fa-angle-right" aria-hidden="true"></i></button>
+                  <button type="button" class="pub-btn ghost" id="bt-restart"><i class="fa fa-refresh" aria-hidden="true"></i> <span data-es="Reiniciar">Restart</span></button>
+               </div>
+                  <div class="game-over" id="bt-over" hidden>
+                     <h3 id="bt-over-title"></h3>
+                     <div class="big" id="bt-over-score"></div>
+                     <p id="bt-over-msg"></p>
+                     <button type="button" class="pub-btn" id="bt-again"><i class="fa fa-repeat" aria-hidden="true"></i> <span data-es="Jugar otra vez">Play again</span></button>
+                  </div>
+            </div>
+
+            <div class="lab-panel game-learn">
+               <h3 data-es="¿Qué aprendes?">What you learn</h3>
+               <ul>
+                  <li data-es="La ley de Bragg n&lambda; = 2d sen&theta; relaciona el ángulo de cada pico con la distancia entre planos de la red.">Bragg&rsquo;s law n&lambda; = 2d sin&theta; links the angle of each peak to the spacing between lattice planes.</li>
+                  <li data-es="El detector está a 2&theta; del haz directo, mientras la muestra gira &theta; (geometría &theta;&ndash;2&theta;).">The detector sits at 2&theta; from the direct beam, while the sample turns by &theta; (&theta;&ndash;2&theta; geometry).</li>
+                  <li data-es="Cambiar el tubo cambia &lambda; y desplaza todos los picos: con Mo K&alpha; (0,71 &Aring;) aparecen a ángulos mucho menores que con Cu K&alpha; (1,54 &Aring;).">Changing the tube changes &lambda; and shifts every peak: Mo K&alpha; (0.71 &Aring;) puts them at much lower angles than Cu K&alpha; (1.54 &Aring;).</li>
+               </ul>
+               <p class="lab-hint"><a href="lab-bragg.html" data-es="Mira la interferencia detrás en el simulador de Bragg &rarr;">See the interference behind it in the Bragg simulator &rarr;</a></p>
+            </div>
+         </div>
+      </section>
+      <!-- game bragg end -->
+
+      <!-- footer section start -->
+      <div class="footer_section">
+         <div class="container">
+            <div class="location_text">
+               <ul>
+                  <li>
+                     <a href="https://www.linkedin.com/in/frank-r-sanchez-monteza-41bb55163/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                  </li>
+                  <li>
+                     <a href="https://orcid.org/0000-0002-4278-1103" target="_blank" rel="noopener" aria-label="ORCID"><span class="orcid-id">iD</span></a>
+                  </li>
+                  <li>
+                     <a href="contact.html" aria-label="Contact" data-es-aria-label="Contacto"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+                  </li>
+               </ul>
+            </div>
+         </div>
+      </div>
+      <!-- footer section end -->
+      <!-- copyright section start -->
+      <div class="copyright_section">
+         <div class="container">
+            <p class="copyright_text" data-es="&copy; 2026 Frank R. Sánchez-Monteza. Diseño de <a href=&quot;https://html.design&quot;>Free Html Templates</a> &middot; Distribución de <a href=&quot;https://themewagon.com&quot;>ThemeWagon</a>">&copy; 2026 Frank R. Sánchez-Monteza. Design by <a href="https://html.design">Free Html Templates</a> &middot; Distribution by <a href="https://themewagon.com">ThemeWagon</a></p>
+         </div>
+      </div>
+      <!-- copyright section end -->
+      <!-- Javascript files-->
+      <script src="js/jquery.min.js"></script>
+      <script src="js/popper.min.js"></script>
+      <script src="js/bootstrap.bundle.min.js"></script>
+      <script src="js/jquery-3.0.0.min.js"></script>
+      <script src="js/plugin.js"></script>
+      <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+      <script src="js/custom.js"></script>
+      <script src="js/i18n.js"></script>
+      <script src="js/frsm.js"></script>
+      <!-- Virtual lab -->
+      <script src="js/structures-data.js"></script>
+      <script src="js/xrd-engine.js"></script>
+      <script src="js/game-bragg.js"></script>
+   </body>
+</html>

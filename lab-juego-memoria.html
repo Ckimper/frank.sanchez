@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <!-- basic -->
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <!-- site metas -->
+      <title data-es="Memoria de materiales | Frank Sánchez">Materials memory | Frank Sánchez</title>
+      <meta name="description" content="Memory minigame: match each material with its band gap, crystal structure or mineral name.">
+      <meta name="author" content="Frank R. Sánchez-Monteza">
+      <link rel="canonical" href="https://ckimper.github.io/frank.sanchez/lab-juego-memoria.html">
+      <!-- share preview (WhatsApp, LinkedIn, Facebook, X) -->
+      <meta property="og:type" content="website">
+      <meta property="og:site_name" content="Frank R. Sánchez-Monteza">
+      <meta property="og:title" content="Materials memory | Frank Sánchez">
+      <meta property="og:description" content="Memory minigame: match each material with its band gap, crystal structure or mineral name.">
+      <meta property="og:url" content="https://ckimper.github.io/frank.sanchez/lab-juego-memoria.html">
+      <meta property="og:image" content="https://ckimper.github.io/frank.sanchez/images/og-image.jpg">
+      <meta property="og:image:width" content="1200">
+      <meta property="og:image:height" content="630">
+      <meta name="twitter:card" content="summary_large_image">
+      <!-- bootstrap css -->
+      <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+      <!-- style css -->
+      <link rel="stylesheet" type="text/css" href="css/style.css">
+      <!-- Responsive-->
+      <link rel="stylesheet" href="css/responsive.css">
+      <!-- fevicon -->
+      <link rel="icon" href="images/fev.jpg" type="image/jpeg" />
+      <!-- Scrollbar Custom CSS -->
+      <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
+      <!-- Tweaks for older IEs-->
+      <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+      <!-- fonts -->
+      <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+      <!-- FRSM 2.0 styles -->
+      <link rel="stylesheet" href="css/frsm2.css">
+      <script>(function(){var l;try{l=localStorage.getItem('frsm-lang')}catch(e){}if(l!=='es'&&l!=='en')l=/^es\b/i.test(navigator.language||'')?'es':'en';document.documentElement.setAttribute('data-lang',l);document.documentElement.lang=l})();</script>
+   </head>
+   <body>
+      <!-- header section start -->
+      <div class="header_section header_bg">
+         <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+               <div class="logo"><a href="index.html"><img src="images/logo3.png" alt="FRSM - Home"></a></div>
+               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" data-es-aria-label="Abrir menú">
+               <span class="navbar-toggler-icon"></span>
+               </button>
+               <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav ml-auto">
+                     <li class="nav-item">
+                        <a class="nav-link" href="index.html" data-es="Inicio">Home</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="portfolio.html" data-es="Investigación">Research</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="publications.html" data-es="Publicaciones">Publications</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="lab.html">Lab</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="service.html" data-es="Sobre mí">About me</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="blog.html">Blog</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="contact.html" data-es="Contacto">Contact</a>
+                     </li>
+                  </ul>
+               </div>
+            </nav>
+         </div>
+      </div>
+      <!-- header section end -->
+
+      <!-- lab tools menu -->
+      <nav class="lab-subnav" aria-label="Lab tools" data-es-aria-label="Herramientas del laboratorio">
+         <div class="container">
+            <a href="lab.html" class="lab-subnav-home"><i class="fa fa-th" aria-hidden="true"></i> <span data-es="Laboratorio">Lab</span></a>
+            <a href="lab-scherrer.html"><i class="fa fa-crosshairs" aria-hidden="true"></i> <span>Scherrer</span></a>
+            <a href="lab-tauc.html"><i class="fa fa-sun-o" aria-hidden="true"></i> <span>Tauc</span></a>
+            <a href="lab-urbach.html"><i class="fa fa-signal" aria-hidden="true"></i> <span>Urbach</span></a>
+            <a href="lab-estructuras.html"><i class="fa fa-dot-circle-o" aria-hidden="true"></i> <span data-es="Estructuras y DRX">Structures &amp; XRD</span></a>
+            <a href="lab-sintesis.html"><i class="fa fa-flask" aria-hidden="true"></i> <span data-es="Síntesis">Synthesis</span></a>
+            <a href="lab-bragg.html"><i class="fa fa-bolt" aria-hidden="true"></i> <span>Bragg</span></a>
+            <a href="lab-punto-cuantico.html"><i class="fa fa-lightbulb-o" aria-hidden="true"></i> <span data-es="Punto cuántico">Quantum dot</span></a>
+            <a href="lab-conversor.html"><i class="fa fa-exchange" aria-hidden="true"></i> <span data-es="Conversor">Unit converter</span></a>
+            <a href="lab-juegos.html" class="active"><i class="fa fa-gamepad" aria-hidden="true"></i> <span data-es="Juegos">Games</span></a>
+         </div>
+      </nav>
+
+      <!-- game memory start -->
+      <section class="frsm-section" id="juego-memoria">
+         <div class="container game-wrap">
+            <p class="lab-back"><a href="lab-juegos.html"><i class="fa fa-angle-left" aria-hidden="true"></i> <span data-es="Todos los juegos">All games</span></a></p>
+            <h1 class="frsm-title" data-es="Memoria de <span>materiales</span>">Materials <span>memory</span></h1>
+            <p class="frsm-lead" data-es="Encuentra las 8 parejas: cada material va con una de sus propiedades (brecha de energía, estructura o nombre del mineral). Con cada pareja aprendes un dato nuevo.">Find the 8 pairs: each material goes with one of its properties (band gap, structure or mineral name). Every pair you find teaches you a new fact.</p>
+            <div class="game-hud"><div><small data-es="Parejas">Pairs</small><b id="mm-pairs">—</b></div><div class="hl"><small data-es="Jugadas">Moves</small><b id="mm-moves">—</b></div><div><small data-es="Tiempo">Time</small><b id="mm-time">—</b></div><div><small data-es="Tu récord">Your best</small><b id="mm-best">—</b></div></div>
+            <div class="game-stage">
+               <p class="game-q" id="mm-fact"></p>
+               <div class="mm-grid" id="mm-grid"></div>
+               <div class="game-bar"><button type="button" class="pub-btn ghost" id="mm-restart"><i class="fa fa-refresh" aria-hidden="true"></i> <span data-es="Reiniciar">Restart</span></button></div>
+                  <div class="game-over" id="mm-over" hidden>
+                     <h3 id="mm-over-title"></h3>
+                     <div class="big" id="mm-over-score"></div>
+                     <p id="mm-over-msg"></p>
+                     <button type="button" class="pub-btn" id="mm-again"><i class="fa fa-repeat" aria-hidden="true"></i> <span data-es="Jugar otra vez">Play again</span></button>
+                  </div>
+            </div>
+
+            <div class="lab-panel game-learn">
+               <h3 data-es="¿Qué aprendes?">What you learn</h3>
+               <ul>
+                  <li data-es="Las brechas de energía de semiconductores comunes y por qué definen el color de un material.">Band gaps of common semiconductors and why they set the colour of a material.</li>
+                  <li data-es="La familia de las espinelas: normal (MgAl<sub>2</sub>O<sub>4</sub>), inversa (Fe<sub>3</sub>O<sub>4</sub>) y distorsionada tetragonalmente (Mn<sub>3</sub>O<sub>4</sub>).">The spinel family: normal (MgAl<sub>2</sub>O<sub>4</sub>), inverse (Fe<sub>3</sub>O<sub>4</sub>) and tetragonally distorted (Mn<sub>3</sub>O<sub>4</sub>).</li>
+                  <li data-es="Nombres de minerales y grupos espaciales que aparecen en las bases de datos de DRX.">Mineral names and space groups that appear in XRD databases.</li>
+               </ul>
+               <p class="lab-hint"><a href="lab.html" data-es="Volver a todas las herramientas del laboratorio &rarr;">Back to all lab tools &rarr;</a></p>
+            </div>
+         </div>
+      </section>
+      <!-- game memory end -->
+
+      <!-- footer section start -->
+      <div class="footer_section">
+         <div class="container">
+            <div class="location_text">
+               <ul>
+                  <li>
+                     <a href="https://www.linkedin.com/in/frank-r-sanchez-monteza-41bb55163/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                  </li>
+                  <li>
+                     <a href="https://orcid.org/0000-0002-4278-1103" target="_blank" rel="noopener" aria-label="ORCID"><span class="orcid-id">iD</span></a>
+                  </li>
+                  <li>
+                     <a href="contact.html" aria-label="Contact" data-es-aria-label="Contacto"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+                  </li>
+               </ul>
+            </div>
+         </div>
+      </div>
+      <!-- footer section end -->
+      <!-- copyright section start -->
+      <div class="copyright_section">
+         <div class="container">
+            <p class="copyright_text" data-es="&copy; 2026 Frank R. Sánchez-Monteza. Diseño de <a href=&quot;https://html.design&quot;>Free Html Templates</a> &middot; Distribución de <a href=&quot;https://themewagon.com&quot;>ThemeWagon</a>">&copy; 2026 Frank R. Sánchez-Monteza. Design by <a href="https://html.design">Free Html Templates</a> &middot; Distribution by <a href="https://themewagon.com">ThemeWagon</a></p>
+         </div>
+      </div>
+      <!-- copyright section end -->
+      <!-- Javascript files-->
+      <script src="js/jquery.min.js"></script>
+      <script src="js/popper.min.js"></script>
+      <script src="js/bootstrap.bundle.min.js"></script>
+      <script src="js/jquery-3.0.0.min.js"></script>
+      <script src="js/plugin.js"></script>
+      <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+      <script src="js/custom.js"></script>
+      <script src="js/i18n.js"></script>
+      <script src="js/frsm.js"></script>
+      <!-- Virtual lab -->
+      <script src="js/game-memory.js"></script>
+   </body>
+</html>
