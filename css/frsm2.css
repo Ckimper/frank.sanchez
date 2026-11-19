@@ -1921,3 +1921,12 @@ body.lab-stuck .lab-top .navbar-collapse { max-height: calc(100vh - 110px); over
 }
 .mm-txt { display: block; max-width: 100%; }
 @media (max-width: 359px) { .mm-front.mat { font-size: 11.5px; letter-spacing: -.3px; } .mm-front { padding: 4px 2px; } }
+
+/* 2.0.8 · About: education timeline */
+.about-timeline { margin-left: 0; max-width: 900px; }
+.about-timeline .tl-item > b { display: block; font-size: 14px; letter-spacing: .3px; color: #b8900c; margin: 0 0 2px; }
+.about-timeline .tl-item > span { display: block; font-size: 15px; }
+.about-timeline .tl-item > span b { font-size: 15px; color: var(--frsm-ink); margin: 0; }
+.about-timeline .tl-item a { color: var(--frsm-dark); text-decoration: underline; text-decoration-color: var(--frsm-yellow); text-underline-offset: 3px; }
+/* 2.0.8 · About intro justified */
+.about-intro p { text-align: justify; hyphens: auto; -webkit-hyphens: auto; }
