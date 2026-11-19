@@ -7,7 +7,7 @@
    2) CONTACT_EMAIL: el correo que se muestra en la página.
    ===================================================================== */
 var WEB3FORMS_KEY = '61a1000a-c8af-4024-b55a-b91260cb0723';
-var CONTACT_EMAIL = 'your.email@example.com';
+var CONTACT_EMAIL = 'frank.sanchez@upr.edu';
 
 (function () {
    'use strict';
