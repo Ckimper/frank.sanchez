@@ -102,55 +102,6 @@ var GOATCOUNTER_CODE = 'franksm';
       stick();
    }
 
-   /* Scroll reveal (2.0.9): cards and blocks below the first screen fade up
-      when they come into view. Things already visible are left alone, so
-      nothing flashes; the hero has its own CSS entrance. */
-   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-   if ('IntersectionObserver' in window && !reduce) {
-      var SEL = '.frsm-card, .lab-tool, .tl-item, .lab-panel, .game-stage, .game-learn, .pano-section, .box_main, .container_main, ' +
-         '.about-sub, .chips, .profile-links, .lab-hub-title, .pub-item, .contact-info, .contact-form, .formula, .frsm-lead';
-      var vh = window.innerHeight || 800, items = [];
-      document.querySelectorAll(SEL).forEach(function (el) {
-         if (el.closest('.lab-top, .game-over, .reveal')) return;     // nested inside something that already animates
-         if (el.getBoundingClientRect().top < vh * 0.92) return;      // already on screen
-         el.classList.add('reveal');
-         items.push(el);
-      });
-      if (items.length) {
-         document.documentElement.classList.add('js-reveal');
-         var done = function (e) {
-            if (e.target !== this || e.propertyName !== 'opacity') return;
-            this.classList.remove('reveal', 'in'); this.style.removeProperty('--rd');
-            this.removeEventListener('transitionend', done);
-         };
-         var ro = new IntersectionObserver(function (ents) {
-            var k = 0;
-            ents.forEach(function (en) {
-               if (!en.isIntersecting) return;
-               var el = en.target;
-               el.style.setProperty('--rd', Math.min(k++, 5) * 0.08 + 's');   // small stagger inside a row
-               el.classList.add('in');
-               el.addEventListener('transitionend', done);
-               ro.unobserve(el);
-            });
-         }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
-         items.forEach(function (el) { ro.observe(el); });
-         /* safety net: if the observer never fires (old browser, embedded page…), reveal by position on scroll */
-         var sweep = function () {
-            var left = 0, h = window.innerHeight;
-            items.forEach(function (el) {
-               if (!el.classList.contains('reveal') || el.classList.contains('in')) return;
-               left++;
-               var r = el.getBoundingClientRect();
-               if (r.top < h && r.bottom > 0) { el.classList.add('in'); el.addEventListener('transitionend', done); ro.unobserve(el); }
-            });
-            if (!left) window.removeEventListener('scroll', onScroll);
-         };
-         var tick = 0, onScroll = function () { if (!tick) tick = setTimeout(function () { tick = 0; sweep(); }, 120); };
-         window.addEventListener('scroll', onScroll, { passive: true });
-      }
-   }
-
    /* Lab tools menu: bring the current tool into view on small screens */
    var cur = document.querySelector('.lab-subnav a.active');
    if (cur && cur.parentNode.scrollWidth > cur.parentNode.clientWidth) {
