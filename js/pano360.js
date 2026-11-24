@@ -60,7 +60,8 @@
       viewer = window.pannellum.viewer('pano', {
          'default': {
             firstScene: cur, autoLoad: true, sceneFadeDuration: 700,
-            hfov: 105, minHfov: 45, maxHfov: 120,
+            /* the photos are 2000 × 1000 px: a wide view and little zoom keep them sharper */
+            hfov: 120, minHfov: 95, maxHfov: 120,
             autoRotate: -2, autoRotateInactivityDelay: 6000,
             mouseZoom: 'fullscreenonly', compass: false, showZoomCtrl: true, showFullscreenCtrl: true,
             strings: strings()
