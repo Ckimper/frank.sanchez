@@ -1930,3 +1930,41 @@ body.lab-stuck .lab-top .navbar-collapse { max-height: calc(100vh - 110px); over
 .about-timeline .tl-item a { color: var(--frsm-dark); text-decoration: underline; text-decoration-color: var(--frsm-yellow); text-underline-offset: 3px; }
 /* 2.0.8 · About intro justified */
 .about-intro p { text-align: justify; hyphens: auto; -webkit-hyphens: auto; }
+
+/* ===================== 2.0.9 · Gallery: 360° views ===================== */
+.pano-section { margin: 10px 0 50px; }
+.pano-h { font-size: 28px; font-weight: bold; color: var(--frsm-ink); margin: 30px 0 8px; }
+.pano-h span { color: var(--frsm-yellow); }
+.pano-h2 { margin-bottom: 0; }
+.pano-lead { max-width: 820px; font-size: 16px; color: var(--frsm-text); line-height: 1.7; margin: 0 0 18px; }
+.pano-frame { position: relative; border-radius: 16px; overflow: hidden; background: #1e2725; box-shadow: 0 14px 34px rgba(0,0,0,.18); }
+.pano-view { width: 100%; height: min(62vh, 560px); min-height: 320px; }
+.pano-badge { position: absolute; right: 12px; top: 12px; z-index: 3; pointer-events: none; background: rgba(37,47,45,.85); color: var(--frsm-yellow); font: 700 13px Poppins, sans-serif; padding: 6px 11px; border-radius: 20px; letter-spacing: .5px; }
+.pano-view.pano-failed + .pano-badge { display: none; }
+.pano-info { display: grid; grid-template-columns: 1fr auto; gap: 22px; align-items: start; margin-top: 16px; }
+.pano-info h3 { font-size: 21px; font-weight: bold; color: var(--frsm-ink); margin: 0 0 6px; }
+.pano-info p { margin: 0 0 8px; color: var(--frsm-text); font-size: 15px; line-height: 1.65; text-align: justify; hyphens: auto; }
+.pano-credit { font-size: 14px !important; color: var(--frsm-muted) !important; }
+.pano-credit b { color: var(--frsm-ink); }
+.pano-scenes { display: flex; gap: 12px; }
+.pano-scene { width: 170px; padding: 0; border: 3px solid transparent; border-radius: 12px; overflow: hidden; background: #fff; cursor: pointer; box-shadow: 0 4px 14px rgba(0,0,0,.1); text-align: left; font: inherit; transition: border-color .15s, transform .15s; }
+.pano-scene img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; }
+.pano-scene span { display: block; padding: 7px 10px; font-size: 13.5px; font-weight: 600; color: var(--frsm-ink); }
+.pano-scene:hover { transform: translateY(-2px); }
+.pano-scene.active { border-color: var(--frsm-yellow); }
+.pano-scene.active span { background: var(--frsm-yellow); color: var(--frsm-dark); }
+.pano-scene:focus-visible { outline: 3px solid var(--frsm-dark); outline-offset: 2px; }
+/* Pannellum touches */
+.pano-view .pnlm-load-box { background: rgba(37,47,45,.9); border-radius: 12px; }
+.pano-view .pnlm-title-box { font-family: Poppins, sans-serif; border-radius: 0 10px 10px 0; background: rgba(37,47,45,.75); }
+.pano-view .pnlm-controls { border-radius: 8px; }
+@media (max-width: 767px) {
+   .pano-h { font-size: 23px; }
+   .pano-lead { font-size: 14.5px; }
+   .pano-view { height: 58vh; min-height: 280px; max-height: 440px; }
+   .pano-frame { border-radius: 12px; margin: 0 -6px; }
+   .pano-info { grid-template-columns: 1fr; gap: 12px; }
+   .pano-scenes { order: -1; }
+   .pano-scene { flex: 1 1 0; width: auto; }
+   .pano-info h3 { font-size: 18px; }
+}
