@@ -1968,3 +1968,58 @@ body.lab-stuck .lab-top .navbar-collapse { max-height: calc(100vh - 110px); over
    .pano-scene { flex: 1 1 0; width: auto; }
    .pano-info h3 { font-size: 18px; }
 }
+/* ===================== 2.0.9 · Header: logo in the corner ===================== */
+.header_section > .container { max-width: none; padding-left: clamp(16px, 2.4vw, 40px); padding-right: clamp(16px, 2.4vw, 40px); }
+@media (min-width: 992px) {
+   .header_section > .container > .navbar { padding-top: 18px !important; padding-bottom: 18px !important; }
+   body.lab-stuck .lab-top .header_section > .container > .navbar { padding-top: 6px !important; padding-bottom: 6px !important; }
+}
+
+/* ===================== 2.0.9 · Transitions ===================== */
+/* cross-fade between pages (browsers that support it; others just load normally) */
+@view-transition { navigation: auto; }
+::view-transition-old(root), ::view-transition-new(root) { animation-duration: .28s; animation-timing-function: ease; }
+
+/* home hero entrance */
+@keyframes frsmUp { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: none; } }
+@keyframes frsmFade { from { opacity: 0; } to { opacity: 1; } }
+@keyframes frsmBg { from { background-position: 0 -14px; opacity: .6; } to { background-position: 0 0; opacity: 1; } }
+.header_section .navbar { animation: frsmFade .6s ease both; }
+.banner_taital { animation: frsmUp .8s .15s cubic-bezier(.2,.7,.2,1) both; }
+.banner_text { animation: frsmUp .8s .35s cubic-bezier(.2,.7,.2,1) both; }
+.banner_section .social_icon, .banner_section .play_icon { animation: frsmFade .8s .6s ease both; }
+.frsm-title, .services_taital, .portfolio_taital { animation: frsmUp .7s .05s cubic-bezier(.2,.7,.2,1) both; }
+
+/* scroll reveal: elements get .reveal from js/frsm.js, then .in when they enter the screen */
+.js-reveal .reveal { opacity: 0; transform: translateY(26px); transition: opacity .7s ease, transform .7s cubic-bezier(.2,.7,.2,1); transition-delay: var(--rd, 0s); }
+.js-reveal .reveal.in { opacity: 1; transform: none; }
+
+/* small interaction transitions */
+.frsm-card, .lab-tool, .tl-item, .container_main, .box_main, .pano-scene { transition: transform .25s ease, box-shadow .25s ease, opacity .7s ease; }
+.frsm-card:hover, .lab-tool:hover { transform: translateY(-4px); box-shadow: 0 14px 30px rgba(0,0,0,.09); }
+.navbar-nav .nav-link { transition: color .2s ease; }
+
+@media (prefers-reduced-motion: reduce) {
+   @view-transition { navigation: none; }
+   .header_section .navbar, .banner_taital, .banner_text, .banner_section .social_icon, .banner_section .play_icon,
+   .frsm-title, .services_taital, .portfolio_taital { animation: none !important; }
+   .js-reveal .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+   .frsm-card:hover, .lab-tool:hover { transform: none; }
+}
+@media print { .js-reveal .reveal { opacity: 1 !important; transform: none !important; } }@media (min-width: 992px) {
+   .header_section > .container > .navbar > .logo { width: auto !important; flex: 0 0 auto; }
+   .header_section > .container > .navbar > .logo img { height: 46px; width: auto; max-width: none; }
+   body.lab-stuck .lab-top .header_section > .container > .navbar > .logo img { height: 40px !important; }
+}/* 2.0.9 · home on tablets and phones: show the hexagon image behind a dark veil (the template used a flat colour) */
+@media (max-width: 991px) {
+   .header_section:has(.banner_section) {
+      background: linear-gradient(90deg, rgba(35,43,41,.96) 0%, rgba(35,43,41,.82) 45%, rgba(35,43,41,.35) 100%),
+                  #232b29 url(../images/banner-bg.png) no-repeat 100% 100% / auto 100% !important;
+   }
+}@media (min-width: 768px) and (max-width: 991px) {
+   .header_section > .container > .navbar > .logo { width: auto !important; flex: 0 0 auto; float: none; }
+   .header_section > .container > .navbar > .logo img { height: 44px; width: auto; max-width: none; }
+   .header_section > .container > .navbar { flex-wrap: wrap; padding: 14px 0 !important; }
+   .header_section > .container > .navbar > .navbar-toggler { margin-left: auto; }
+   .header_section > .container > .navbar > .navbar-collapse { flex-basis: 100%; }
+}
