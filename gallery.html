@@ -7,14 +7,14 @@
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <!-- site metas -->
       <title data-es="Galería | Frank Sánchez">Gallery | Frank Sánchez</title>
-      <meta name="description" content="Photo gallery of Frank R. Sánchez-Monteza.">
+      <meta name="description" content="Photo gallery of Frank R. Sánchez-Monteza, with interactive 360° aerial views of Santa Cruz de Succhabamba and Cerro Cotorumi (Cajamarca, Peru).">
       <meta name="author" content="Frank R. Sánchez-Monteza">
       <link rel="canonical" href="https://ckimper.github.io/frank.sanchez/gallery.html">
       <!-- share preview (WhatsApp, LinkedIn, Facebook, X) -->
       <meta property="og:type" content="website">
       <meta property="og:site_name" content="Frank R. Sánchez-Monteza">
       <meta property="og:title" content="Gallery | Frank Sánchez">
-      <meta property="og:description" content="Photo gallery of Frank R. Sánchez-Monteza.">
+      <meta property="og:description" content="Photo gallery of Frank R. Sánchez-Monteza, with interactive 360° aerial views of Santa Cruz de Succhabamba and Cerro Cotorumi (Cajamarca, Peru).">
       <meta property="og:url" content="https://ckimper.github.io/frank.sanchez/gallery.html">
       <meta property="og:image" content="https://ckimper.github.io/frank.sanchez/images/og-image.jpg">
       <meta property="og:image:width" content="1200">
@@ -35,6 +35,7 @@
       <!-- fonts -->
       <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
       <!-- FRSM 2.0 styles -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pannellum/2.5.6/pannellum.css">
       <link rel="stylesheet" href="css/frsm2.css">
       <script>(function(){var l;try{l=localStorage.getItem('frsm-lang')}catch(e){}if(l!=='es'&&l!=='en')l=/^es\b/i.test(navigator.language||'')?'es':'en';document.documentElement.setAttribute('data-lang',l);document.documentElement.lang=l})();</script>
    </head>
@@ -84,6 +85,30 @@
                   <h1 class="portfolio_taital" data-es="Mi <span class=&quot;portfolio_taital_1&quot;>Galería</span>">My <span class="portfolio_taital_1">Gallery</span></h1>
                </div>
             </div>
+
+            <!-- 360 views start -->
+            <section class="pano-section" aria-labelledby="pano-h">
+               <h2 class="pano-h" id="pano-h" data-es="Santa Cruz en <span>360°</span>">Santa Cruz in <span>360°</span></h2>
+               <p class="pano-lead" data-es="Mi tierra, Santa Cruz de Succhabamba (Cajamarca, Perú), vista desde el aire. Arrastra la imagen para mirar en todas las direcciones, usa + y &minus; para acercar y el botón de pantalla completa para verla mejor.">My hometown, Santa Cruz de Succhabamba (Cajamarca, Peru), seen from the air. Drag the image to look in every direction, use + and &minus; to zoom and the full-screen button for a better view.</p>
+               <div class="pano-frame">
+                  <div id="pano" class="pano-view" role="img" aria-label="Interactive 360° panorama" data-es-aria-label="Panorámica 360° interactiva"></div>
+                  <span class="pano-badge" aria-hidden="true"><i class="fa fa-arrows" aria-hidden="true"></i> 360°</span>
+               </div>
+               <div class="pano-info">
+                  <div>
+                     <h3 id="pano-title">Santa Cruz de Succhabamba</h3>
+                     <p id="pano-text"></p>
+                     <p class="pano-credit"><i class="fa fa-camera" aria-hidden="true"></i> <span data-es="Fotografías 360°:">360° photos:</span> <b>Robert Marx</b></p>
+                  </div>
+                  <div class="pano-scenes" role="group" aria-label="Choose a view" data-es-aria-label="Elige una vista">
+                     <button type="button" class="pano-scene" data-pano="santa-cruz" aria-pressed="true"><img src="images/360/santa-cruz-thumb.jpg" alt="" loading="lazy" width="480" height="270"><span data-es="La ciudad">The town</span></button>
+                     <button type="button" class="pano-scene" data-pano="cotorumi" aria-pressed="false"><img src="images/360/cerro-cotorumi-thumb.jpg" alt="" loading="lazy" width="480" height="270"><span>Cerro Cotorumi</span></button>
+                  </div>
+               </div>
+            </section>
+            <!-- 360 views end -->
+
+            <h2 class="pano-h pano-h2" data-es="Fotos">Photos</h2>
             <div class="portfolio_section">
                <div class="portfolio_section_2">
                   <div class="row">
@@ -195,6 +220,9 @@
       <script src="js/custom.js"></script>
       <script src="js/i18n.js"></script>
       <script src="js/frsm.js"></script>
+      <!-- 360 viewer -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/pannellum/2.5.6/pannellum.js"></script>
+      <script src="js/pano360.js"></script>
       <script>
          $('#myCarousel').carousel({
             interval: false
