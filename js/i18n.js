@@ -17,7 +17,7 @@
    'use strict';
 
    var KEY = 'frsm-lang';
-   var ATTRS = ['placeholder', 'aria-label', 'title'];
+   var ATTRS = ['placeholder', 'aria-label', 'title', 'alt'];
    var root = document.documentElement;
    var listeners = [];
 
